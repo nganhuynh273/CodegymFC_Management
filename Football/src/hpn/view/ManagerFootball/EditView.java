@@ -25,15 +25,15 @@ public class EditView {
         boolean isChoice = true;
         int choice = -1;
         do {
-            String leftAlignFormat = "| %-2s | %-50s | %n";
-            String line = "+----+----------------------------------------------------+%n";
-            System.out.format(line);
-            System.out.format("| #  | CẬP NHẬT THÔNG TIN NHÂN VIÊN                          |%n");
-            System.out.format(line);
-            System.out.format(leftAlignFormat, 1, "Chỉnh sửa thông tin Cầu thủ");
-            System.out.format(leftAlignFormat, 2, "Chỉnh sửa thông tin Huấn luyện viên");
-            System.out.format(leftAlignFormat, 0, "Quay lại");
-            System.out.format(line);
+            System.out.print("╔══════════════════════════════════════════════════════════════════╗\n" +
+                    "║                                                                  ║\n" +
+                    "║                  CẬP NHẬT THÔNG TIN NHÂN VIÊN                    ║\n" +
+                    "║                                                                  ║\n" +
+                    "║                 [1] Chỉnh sửa thông tin Cầu thủ                  ║\n" +
+                    "║                 [2] Chỉnh sửa thông tin Huấn luyện viên          ║\n" +
+                    "║                 [0] Quay lại                                     ║\n" +
+                    "║                                                                  ║\n" +
+                    "╚══════════════════════════════════════════════════════════════════╝\n");
             System.out.print("Chọn\t➨ ");
             try {
                 choice = Integer.parseInt(scanner.nextLine());
@@ -100,7 +100,16 @@ public class EditView {
                 } while (!is);
                 boolean flag = true;
                 do {
-                    System.out.print("Nhấn 'c' để tiếp tục cập nhật \nNhấn 'q' để quay lại \nNhấn 'b' để quay về menu\nNhấn 't' để thoát... \n=> \t");
+                    System.out.print("╔══════════════════════════════════════════════════════════════════╗\n" +
+                            "║                                                                  ║\n" +
+                            "║                                                                  ║\n" +
+                            "║                   [1] Nhấn 'c' để tiếp tục cập nhật              ║\n" +
+                            "║                   [2] Nhấn 'q' để quay trở lại                   ║\n" +
+                            "║                   [3] Nhấn 'b' để quay về menu                   ║\n" +
+                            "║                   [4] Nhấn 't' để thoát chương trình             ║\n" +
+                            "║                                                                  ║\n" +
+                            "╚══════════════════════════════════════════════════════════════════╝\n");
+//                    System.out.print("Nhấn 'c' để tiếp tục cập nhật \nNhấn 'q' để quay lại \nNhấn 'b' để quay về menu\nNhấn 't' để thoát... \n=> \t");
                     String chon = scanner.nextLine();
                     switch (chon) {
                         case "c":
@@ -213,10 +222,15 @@ public class EditView {
                 } while (!is);
                 boolean flag = true;
                 do {
-                    System.out.println("Nhấn 'c' để tiếp tục cập nhật\n" +
-                            "Nhấn 'q' để quay trở lại" +
-                            "Nhấn 'b' để quay về menu \n" +
-                            "Nhấn 't' để thoát chương trình");
+                    System.out.print("╔══════════════════════════════════════════════════════════════════╗\n" +
+                        "║                                                                  ║\n" +
+                        "║                                                                  ║\n" +
+                        "║                   [1] Nhấn 'c' để tiếp tục cập nhật              ║\n" +
+                        "║                   [2] Nhấn 'q' để quay trở lại                   ║\n" +
+                        "║                   [3] Nhấn 'b' để quay về menu                   ║\n" +
+                        "║                   [4] Nhấn 't' để thoát chương trình             ║\n" +
+                        "║                                                                  ║\n" +
+                        "╚══════════════════════════════════════════════════════════════════╝\n");
                     System.out.println("Nhấn ");
                     System.out.print("➨ \t ");
                     String chon = scanner.nextLine();
@@ -278,31 +292,31 @@ public class EditView {
     }
 
     public static void showFootballer(List<Footballer> footballerList) {
-        System.out.println("\n------------------------------ CẦU THỦ ------------------------------------------\n");
-        String leftAlignFormat = "│ %-7s │ %-13s│ %-13s │ %-9s │ %-9s │ %-10s │ %-13s │                %-10s │ %-14s │              %-11s │ %-16s │ %-14s │%n";
-        String line = "+ꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷ+%n";
-        System.out.format(line);
-        System.out.format("│   ID    │ Mã nhân viên │ Họ và tên   │ Quốc tịch  │ Giới tính │          Ngày sinh           │         Ngày vào làm         │ Số bàn thắng ghi vào lưới │ Vị trí thi đấu │ Số lượt tham gia thi đấu │ Lương thỏa thuận │ Lương thực nhận│%n");
-        System.out.format(line);
+        System.out.println("════════════════════════════════════════════════════ DANH SÁCH CẦU THỦ ════════════════════════════════════════════════════════════════");
         for (Footballer footballer : footballerList) {
-            System.out.format(leftAlignFormat, footballer.getStaffID(), footballer.getMaNhanvien(), footballer.getTen(), footballer.getQuocTich(), footballer.getGioiTinh(), DateUtils.dateToString(footballer.getNgaySinh(), DateUtils.DATE_PATTERN), DateUtils.dateToString(footballer.getNgayVaoLam(), DateUtils.DATE_PATTERN), footballer.getBanThang(),
+            System.out.printf("%-12s %-10s %-20s %-20s %-20s %-20s %-20s %-20s\n",
+                    "Thông tin cá nhân: \n", "ID", "Mã nhân viên", "Họ và tên", "Quốc tịch", "Giới tính", "Ngày sinh", "Ngày vào làm");
+            System.out.printf("%-11s %-13s %17s %18s %15s %27s %20s\n", footballer.getStaffID(), footballer.getMaNhanvien(), footballer.getTen(), footballer.getQuocTich(), footballer.getGioiTinh(), DateUtils.dateToString(footballer.getNgaySinh(), DateUtils.DATE_PATTERN), DateUtils.dateToString(footballer.getNgayVaoLam(), DateUtils.DATE_PATTERN));
+
+            System.out.printf("%-12s %-31s %-20s %-30s %-27s %-15s\n",
+                    "Thông tin thi đấu:\n", "Số bàn thắng ghi vào lưới", "Vị trí thi đấu", "Lượt tham gia thi đấu", "Lương thỏa thuận", "Lương thực nhận");
+            System.out.printf("%3s %36s %15s %42s %27s\n", footballer.getBanThang(),
                     footballer.getViTriThiDau(), footballer.getSoLuotTranThamGia(), format.format(footballer.getLuongThoaThuan()), format.format(footballer.tinhLuong()));
-            System.out.format(line);
-            System.out.println("\n");
+            System.out.println("═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════");
         }
     }
     public static void showCoach(List<Coach> coachList) {
-        System.out.println("\n------------------------------ HUẤN LUYỆN VIÊN ------------------------------------------\n");
-        String leftAlignFormat = "│ %-7s │ %-13s│ %-13s │ %-9s │ %-9s │ %-10s │ %-13s │                %-10s │ %-14s │   %-16s │ %-14s │%n";
-        String line = "+ꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷ+%n";
-        System.out.format(line);
-        System.out.format("│   ID    │ Mã nhân viên │ Họ và tên   │ Quốc tịch  │ Giới tính │          Ngày sinh           │         Ngày vào làm         │ Số năm kinh nghiệm │ Hệ số lương │ Lương phụ cấp │ Lương thực nhận│%n");
-        System.out.format(line);
+        System.out.println("════════════════════════════════════════════════════ DANH SÁCH HUẤN LUYỆN VIÊN ═══════════════════════════════════════════════════════");
         for (Coach coach : coachList) {
-            System.out.format(leftAlignFormat, coach.getStaffID(), coach.getMaNhanvien(), coach.getTen(), coach.getQuocTich(), coach.getGioiTinh(), DateUtils.dateToString(coach.getNgaySinh(), DateUtils.DATE_PATTERN), DateUtils.dateToString(coach.getNgayVaoLam(), DateUtils.DATE_PATTERN), coach.getSoNamKinhNghiem(),
-                    coach.getHeSoLuong(), coach.getPhuCap(), format.format(coach.tinhLuong()));
-            System.out.format(line);
-            System.out.println("\n");
+            System.out.printf("%-12s %-10s %-20s %-20s %-20s %-20s %-20s %-20s\n",
+                    "Thông tin cá nhân: \n", "ID", "Mã nhân viên", "Họ và tên", "Quốc tịch", "Giới tính", "Ngày sinh", "Ngày vào làm");
+            System.out.printf("%-11s %-13s %17s %18s %15s %27s %20s\n", coach.getStaffID(), coach.getMaNhanvien(), coach.getTen(), coach.getQuocTich(), coach.getGioiTinh(), DateUtils.dateToString(coach.getNgaySinh(), DateUtils.DATE_PATTERN), DateUtils.dateToString(coach.getNgayVaoLam(), DateUtils.DATE_PATTERN));
+
+            System.out.printf("%-12s %-31s %-20s %-20s %-27s\n",
+                    "Kinh nghiệm làm việc:\n", "Số năm kinh nghiệm", "Hệ số lương", "Lương phụ cấp", "Lương thực nhận");
+            System.out.printf("%3s %32s %30s %21s\n", coach.getSoNamKinhNghiem(),
+                    coach.getHeSoLuong(), format.format(coach.getPhuCap()), format.format(coach.tinhLuong()));
+            System.out.println("═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════");
         }
     }
 }

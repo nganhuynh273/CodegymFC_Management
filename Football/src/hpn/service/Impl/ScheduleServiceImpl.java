@@ -33,22 +33,37 @@ public class ScheduleServiceImpl implements ISchedule {
     public void updateSchedule(Schedule newSchedule) {
         List<Schedule> schedules = getScheduleItem();
         for (Schedule schedule : schedules) {
+            if (schedule.getID() == newSchedule.getID()) {
                 schedule.setTranThiDau(newSchedule.getTranThiDau());
                 schedule.setGioThiDau(newSchedule.getGioThiDau());
                 schedule.setNgayThidau(newSchedule.getNgayThidau());
                 schedule.setSanThiDau(newSchedule.getSanThiDau());
-            }
-        CSVUtils.writeData(path, schedules);
         }
+        }
+        CSVUtils.writeData(path, schedules);
     }
+
+
 
 //    @Override
 //    public void removeSchedule(long id) {
 //
 //    }
 //
-//    @Override
-//    public boolean exists(int id) {
-//        return false;
-//    }
+    @Override
+    public boolean exists(int id) {
+        return getScheduleByID(id) != null;
+    }
 
+    @Override
+    public Schedule getScheduleByID(int id) {
+        List<Schedule> schedules = getScheduleItem();
+        for (Schedule schedule : schedules) {
+            if (schedule.getID() == id) {
+                return schedule;
+            }
+        }
+        return null;
+    }
+
+}

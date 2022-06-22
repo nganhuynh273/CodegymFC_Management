@@ -7,20 +7,25 @@ import hpn.view.ManagerFootball.SortView.SortView;
 import hpn.view.ManagerSchedule.ScheduleView;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
-import static hpn.view.ManagerFootball.AddView.add;
-import static hpn.view.ManagerFootball.InputView.nhapDuLieuTuDong;
-import static hpn.view.ManagerSchedule.CreateScheduleView.createSchedule;
-import static hpn.view.ManagerSchedule.ShowScheduleView.showSchedule;
-import static hpn.view.Menu.scanner;
+import static hpn.utils.AppUtils.isRetry;
+import static hpn.view.MainLauncher.userMenu;
+import static hpn.view.ManagerFootball.SearchView.searchByTenCoach;
+import static hpn.view.ManagerFootball.ShowView.showCoachs;
+import static hpn.view.ManagerFootball.ShowView.showFootballers;
+import static hpn.view.MemberView.launch;
+import static hpn.view.Menu.mainMenu;
+import static sun.security.jgss.GSSUtil.login;
+
 
 public class Main {
     public static void main(String[] args) throws ParseException {
-       Menu.startMenu();
+//       Menu.startMenu();
 //        SortView.hienThiSapXep();
 //  showSchedule();
 //        nhapDuLieuTuDong();
+//        MainLauncher.launch();
+//        mainMenu();
+        searchByTenCoach();
     }
 }

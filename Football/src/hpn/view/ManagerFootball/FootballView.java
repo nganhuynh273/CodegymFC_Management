@@ -11,7 +11,7 @@ private static Scanner scanner = new Scanner(System.in);
 public static void create() {
     Menu.ManagerFootball();
     FootballView footballView = new FootballView();
-    System.out.println("Chọn chức năng \n ➨ ");
+//    System.out.println("Chọn chức năng \n ➨ ");
     try {
         int choice = Integer.parseInt(scanner.nextLine());
         boolean flag = true;

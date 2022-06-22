@@ -6,7 +6,6 @@ public enum Role {
 
     private String value;
 
-
     private Role(String value) {
         this.value = value;
     }
@@ -21,6 +20,6 @@ public enum Role {
             if (role.value.equals(value))
                 return role;
         }
-        throw new IllegalArgumentException("Không hợp lệ!");
+        throw new IllegalArgumentException("invalid");
     }
 }

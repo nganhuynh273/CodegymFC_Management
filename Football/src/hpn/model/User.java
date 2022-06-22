@@ -1,78 +1,104 @@
 package hpn.model;
 
 
+import java.time.Instant;
+
 public class User {
+
+
     private long id;
-    private String fullName;
-    private String birthday;
-    private String phoneNumber;
-    private String address;
-    private String email;
-    private String userName;
+    private String username;
     private String password;
+    private String fullName;
+    private String phone;
+    private String email;
+    private String address;
     private Role role;
-    private long creationTime;
+    private Instant createdAt;
+    private Instant updatedAt;
 
     public User() {
     }
 
-    public User(String raw) {
-        String[] userInformation = raw.split("~");
-        this.id = Integer.parseInt(userInformation[0]);
-        this.fullName = userInformation[1];
-        this.birthday = userInformation[2];
-        this.phoneNumber = userInformation[3];
-        this.address = userInformation[4];
-        this.email = userInformation[5];
-        this.userName = userInformation[6];
-        this.password = userInformation[7];
-        this.role = Role.parseRole(userInformation[8]);
-        this.creationTime = Long.parseLong(userInformation[9]);
+    public User(long id, String username, String password, String fullName, String phone, String email, String address, Role role, Instant createdAt, Instant updatedAt) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.fullName = fullName;
+        this.phone = phone;
+        this.email = email;
+        this.address = address;
+        this.role = role;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+    }
+
+    public User(long id, String username, String password, String fullName, String phone, String email, String address, Role role) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.fullName = fullName;
+        this.phone = phone;
+        this.email = email;
+        this.address = address;
+        this.role = role;
+    }
+
+    public static User parseUser(String raw) {
+        User user = new User();
+        String[] fields = raw.split(",");
+        user.id = Long.parseLong(fields[0]);
+        user.username = fields[1];
+        user.password = fields[2];
+        user.fullName = fields[3];
+        user.phone = fields[4];
+        user.email = fields[5];
+        user.address = fields[6];
+        user.role = Role.parseRole(fields[7]);
+        user.createdAt = Instant.parse(fields[8]);
+        String temp = fields[9];
+        if (temp != null && !temp.equals("null")) user.updatedAt = Instant.parse(temp);
+        return user;
     }
 
     public long getId() {
-        return this.id;
+        return id;
     }
 
     public void setId(long id) {
         this.id = id;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public String getFullName() {
-        return this.fullName;
-    }
-
-    public String getFirstName() {
-        int lastWhiteSpaceIndex = this.fullName.lastIndexOf(' ');
-        if (lastWhiteSpaceIndex == -1) return this.fullName;
-        return this.fullName.substring(lastWhiteSpaceIndex + 1);
-    }
-
-    public String getLastName() {
-        int lastWhiteSpaceIndex = this.fullName.lastIndexOf(' ');
-        if (lastWhiteSpaceIndex == -1) return "";
-        return this.fullName.substring(0, lastWhiteSpaceIndex);
-
+        return fullName;
     }
 
     public void setFullName(String fullName) {
         this.fullName = fullName;
     }
 
-    public String getPhoneNumber() {
-        return this.phoneNumber;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public String getAddress() {
-        return this.address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getEmail() {
@@ -83,57 +109,40 @@ public class User {
         this.email = email;
     }
 
-    public String getUserName() {
-        return this.userName;
+    public String getAddress() {
+        return address;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getPassword() {
-        return this.password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getBirthday() {
-        return this.birthday;
-    }
-
-    public void setBirthday(String birthday) {
-        this.birthday = birthday;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public Role getRole() {
-        return this.role;
+        return role;
     }
 
     public void setRole(Role role) {
         this.role = role;
     }
 
-    public long getCreationTime() {
-        return creationTime;
+    public Instant getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreationTime() {
-        this.creationTime = System.currentTimeMillis();
+    public void setCreatedAt(Instant createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Instant getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Instant updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     @Override
     public String toString() {
-        return id +
-                "~" + fullName +
-                "~" + birthday +
-                "~" + phoneNumber +
-                "~" + address +
-                "~" + email +
-                "~" + userName +
-                "~" + password +
-                "~" + role +
-                "~" + creationTime;
+        return String.format("%d,%s,%s,%s,%s,%s,%s,%s,%s,%s", id, username, password, fullName, phone, email, address, role, createdAt, updatedAt);
     }
 }

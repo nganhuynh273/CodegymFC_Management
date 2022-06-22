@@ -15,5 +15,6 @@ public interface ISchedule {
 
 //    void removeSchedule (long id);
 //
-//    boolean exists (int id);
+    boolean exists (int id);
+    Schedule getScheduleByID(int ID);
 }

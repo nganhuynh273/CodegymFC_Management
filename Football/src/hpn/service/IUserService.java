@@ -2,10 +2,11 @@ package hpn.service;
 
 import hpn.model.User;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public interface IUserService {
-    List<User> getUsers();
+    List<User> findAll();
 
     User login(String username, String password);
 
@@ -13,14 +14,20 @@ public interface IUserService {
 
     void update(User newUser);
 
-    boolean isIdExisted(long id);
+    boolean existById(long id);
 
-    boolean checkExistedEmail(String email);
+    boolean existsByEmail(String email);
 
-    boolean checkExistedPhone(String phone);
+    boolean existsByPhone(String phone);
 
-    boolean checkExistedUserName(String userName);
+    boolean existsByUsername(String userName);
 
-    User getUserById(long id);
+    User findById(int id);
 
+
+    User findById(long id);
+
+    boolean exists(long id);
+
+    void deleteById(long id);
 }

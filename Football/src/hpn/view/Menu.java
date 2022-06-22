@@ -16,54 +16,49 @@ public class Menu {
     }
 
     public static void mainMenu() {
-        System.out.println("✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤");
-        System.out.println("✤                      MAIN MENU                       ✤");
-        System.out.println("✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤");
-        System.out.println("✤                                                      ✤");
-        System.out.println("✤                 1. Quản lý danh sách đội bóng        ✤");
-        System.out.println("✤                 2. Quản lý thi đấu                   ✤");
-        System.out.println("✤                 3. Thoát                             ✤");
-        System.out.println("✤                                                      ✤");
-        System.out.println("✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤✤");
-        System.out.print("Chọn chức năng \n➨ ");
-
+        System.out.print("╔══════════════════════════════════════════════════════════════════╗\n" +
+                "║                                                                  ║\n" +
+                "║                            MAIN MENU                             ║\n" +
+                "║                                                                  ║\n" +
+                "║                   [1] Quản lý người dùng                         ║\n" +
+                "║                   [2] Quản lý danh sách đội bóng                 ║\n" +
+                "║                   [3] Quản lý thi đấu                            ║\n" +
+                "║                   [0] Thoát                                      ║\n" +
+                "║                                                                  ║\n" +
+                "╚══════════════════════════════════════════════════════════════════╝\n");
     }
 
     public static void ManagerFootball() {
-        System.out.println("✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷");
-        System.out.println("✷                QUẢN LÝ DANH SÁCH ĐỘI BÓNG            ✷");
-        System.out.println("✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷");
-        System.out.println("✷                                                      ✷");
-        System.out.println("✷           1. Hiển thị danh sách                      ✷");
-        System.out.println("✷           2. Thêm danh sách                          ✷");
-        System.out.println("✷           3. Cập nhật danh sách                      ✷");
-        System.out.println("✷           4. Xóa danh sách                           ✷");
-        System.out.println("✷           5. Tìm kiếm nhân viên                      ✷");
-        System.out.println("✷           6. Hiển thị sắp sếp nhân viên              ✷");
-        System.out.println("✷           7. Quay về menu chính                      ✷");
-        System.out.println("✷           0. Thoát chương trình                      ✷");
-        System.out.println("✷                                                      ✷");
-        System.out.println("✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷");
-        System.out.println();
-        System.out.printf("Chọn chức năng  \n➨ ");
+        System.out.print("╔══════════════════════════════════════════════════════════════════╗\n" +
+                "║                                                                  ║\n" +
+                "║                  QUẢN LÝ DANH SÁCH ĐỘI BÓNG                      ║\n" +
+                "║                                                                  ║\n" +
+                "║               [1] Hiển thị danh sách đội bóng                    ║\n" +
+                "║               [2] Thêm danh sách đội bóng                        ║\n" +
+                "║               [3] Cập nhật danh sách đội bóng                    ║\n" +
+                "║               [4] Xóa danh sách                                  ║\n" +
+                "║               [5] Tìm kiếm nhân viên đội bóng                    ║\n" +
+                "║               [6] Hiển thị sắp xếp nhân viên đội bóng            ║\n" +
+                "║               [7] Quay về menu chính                             ║\n" +
+                "║               [0] Thoát chương trình                             ║\n" +
+                "║                                                                  ║\n" +
+                "╚══════════════════════════════════════════════════════════════════╝\n");
     }
 
     public static void ManagerSchedule() {
-        System.out.println("✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷");
-        System.out.println("✷                QUẢN LÝ THI ĐẤU                       ✷");
-        System.out.println("✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷");
-        System.out.println("✷                                                      ✷");
-        System.out.println("✷           1. Xem lịch thi đấu                        ✷");
-        System.out.println("✷           2. Cập nhật lịch thi đấu                   ✷");
-        System.out.println("✷           3. Tạo lịch thi đấu                        ✷");
-        System.out.println("✷           4. Xem kết quả thi đấu                     ✷");
-        System.out.println("✷           5. Bảng giá chuyển nhượng cầu thủ          ✷");
-        System.out.println("✷           6. Quay về menu chính                      ✷");
-        System.out.println("✷           0. Thoát chương trình                      ✷");
-        System.out.println("✷                                                      ✷");
-        System.out.println("✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷");
-        System.out.println();
-        System.out.printf("Chọn chức năng  \n➨ ");
+        System.out.print("╔══════════════════════════════════════════════════════════════════╗\n" +
+                "║                                                                  ║\n" +
+                "║                         QUẢN LÝ THI ĐẤU                          ║\n" +
+                "║                                                                  ║\n" +
+                "║                   [1] Xem lịch thi đấu                           ║\n" +
+                "║                   [2] Cập nhật lịch thi đấu                      ║\n" +
+                "║                   [3] Tạo lịch thi đấu                           ║\n" +
+                "║                   [4] Xem kết quả thi đấu                        ║\n" +
+                "║                   [5] Bảng giá chuyển nhượng cầu thủ             ║\n" +
+                "║                   [6] Quay về menu chính                         ║\n" +
+                "║                   [0] Thoát chương trình                         ║\n" +
+                "║                                                                  ║\n" +
+                "╚══════════════════════════════════════════════════════════════════╝\n");
     }
 
     public static void startMenu() {
@@ -105,42 +100,73 @@ public class Menu {
     }
 
     public static void inputUpdateFootballer() {
-        System.out.println("✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷");
-        System.out.println("✷   1. Cập nhật vị trí thi đấu          ✷");
-        System.out.println("✷   2. Cập nhật lượt tham gia thi đấu   ✷");
-        System.out.println("✷   3. Cập nhật bàn thắng               ✷");
-        System.out.println("✷   4. Cập nhật lương thỏa thuận        ✷");
-        System.out.println("✷   5. Quay lại                         ✷");
-        System.out.println("✷   6. Quay lại menu chính              ✷");
-        System.out.println("✷   0. THoát chương trình               ✷");
-        System.out.println("✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷");
+        System.out.print("╔══════════════════════════════════════════════════════════════════╗\n" +
+                "║                                                                  ║\n" +
+                "║                                                                  ║\n" +
+                "║                   [1] Cập nhật vị trí thi đấu                    ║\n" +
+                "║                   [2] Cập nhật lượt tham gia thi đấu             ║\n" +
+                "║                   [3] Cập nhật bàn thắng                         ║\n" +
+                "║                   [4] Cập nhật lương thỏa thuận                  ║\n" +
+                "║                   [5] Quay lại                                   ║\n" +
+                "║                   [6] Quay lại menu chính                        ║\n" +
+                "║                   [0] THoát chương trình                         ║\n" +
+                "║                                                                  ║\n" +
+                "╚══════════════════════════════════════════════════════════════════╝\n");
         System.out.println("Chọn chức năng");
         System.out.printf("➨ \t");
+
     }
 
     public static void inputUpdateCoach() {
-        System.out.println("✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷");
-        System.out.println("✷   1. Cập nhật số năm kinh nghiệm      ✷");
-        System.out.println("✷   2. Cập nhật hệ số lương             ✷");
-        System.out.println("✷   3. Cập nhật phụ cấp                 ✷");
-        System.out.println("✷   4. Quay lại                         ✷");
-        System.out.println("✷   5. Quay lại menu chính              ✷");
-        System.out.println("✷   0. THoát chương trình               ✷");
-        System.out.println("✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷✷");
+        System.out.print("╔══════════════════════════════════════════════════════════════════╗\n" +
+                "║                                                                  ║\n" +
+                "║                                                                  ║\n" +
+                "║                   [1] Cập nhật số năm kinh nghiệm                ║\n" +
+                "║                   [2] Cập nhật hệ số lương                       ║\n" +
+                "║                   [3] Cập nhật lương phụ cấp                     ║\n" +
+                "║                   [4] Quay lại                                   ║\n" +
+                "║                   [5] Quay lại menu chính                        ║\n" +
+                "║                   [0] THoát chương trình                         ║\n" +
+                "║                                                                  ║\n" +
+                "╚══════════════════════════════════════════════════════════════════╝\n");
         System.out.println("Chọn chức năng");
         System.out.printf("➨ \t");
     }
 
 
     public static void removeConfirm() {
-        System.out.println("❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂");
-        System.out.println("❂                  BẠN CHẮC CHẮN MUỐN XÓA            ❂");
-        System.out.println("❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂");
-        System.out.println("❂                                                    ❂");
-        System.out.println("❂              1. Nhấn 'y' để xác nhận xóa             ❂");
-        System.out.println("❂              2. Nhấn 'c' để quay lại                 ❂");
-        System.out.println("❂                                                    ❂");
-        System.out.println("❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂");
+        System.out.print("╔══════════════════════════════════════════════════════════════════╗\n" +
+                "║                                                                  ║\n" +
+                "║                    BẠN CHẮC CHẮN MUỐN XÓA                        ║\n" +
+                "║                                                                  ║\n" +
+                "║                   [1] Nhấn 'y' để xác nhận xóa                   ║\n" +
+                "║                   [2] Nhấn 'c' để quay lại                       ║\n" +
+                "║                                                                  ║\n" +
+                "╚══════════════════════════════════════════════════════════════════╝\n");
+        System.out.printf("➨ \t");
+    }
+
+//    public static void menuUser() {
+//        System.out.println("⚪ ⚪ ⚪ ⚪ ⚪  USERS MANAGER  ⚪ ⚪ ⚪ ⚪ ⚪");
+//        System.out.println("⚪                                      ⚪");
+//        System.out.println("⚪     1. Thêm người dùng               ⚪");
+//        System.out.println("⚪     2. Sửa thông tin người dùng      ⚪");
+//        System.out.println("⚪     3. Hiện danh sách người dùng     ⚪");
+//        System.out.println("⚪                                      ⚪");
+//        System.out.println("⚪ ⚪ ⚪ ⚪ ⚪ ⚪ ⚪ ⚪ ⚪ ⚪ ⚪ ⚪ ⚪ ⚪ ⚪ ⚪");
+//    }
+    public static void inputUpdate() {
+        System.out.print("╔══════════════════════════════════════════════════════════════════╗\n" +
+                "║                                                                  ║\n" +
+                "║                                                                  ║\n" +
+                "║                   [1] Cập nhật trận thi đấu                      ║\n" +
+                "║                   [2] Cập nhật ngày thi đấu                      ║\n" +
+                "║                   [3] Cập nhật giờ thi đấu                       ║\n" +
+                "║                   [4] Cập nhật sân thi đấu                       ║\n" +
+                "║                   [0] Quay lại                                   ║\n" +
+                "║                                                                  ║\n" +
+                "╚══════════════════════════════════════════════════════════════════╝\n");
+        System.out.println("Chọn chức năng");
         System.out.printf("➨ \t");
     }
 }

@@ -32,10 +32,17 @@ public class ShowScheduleView {
             }
             boolean is = true;
             do {
-                System.out.println("\n=================================================");
-                System.out.printf("\n|         Nhấn 'c' để quay trở lại          |");
-                System.out.printf("\n|         Nhấn 'e' để thoát                 |");
-                System.out.println("\n=================================================");
+                System.out.print("╔══════════════════════════════════════════════════════════════════╗\n" +
+                        "║                                                                  ║\n" +
+                        "║                                                                  ║\n" +
+                        "║                   [1] Nhấn 'c' để trở lại                        ║\n" +
+                        "║                   [2] Nhấn 'e' để thoát chương trình             ║\n" +
+                        "║                                                                  ║\n" +
+                        "╚══════════════════════════════════════════════════════════════════╝\n");
+//                System.out.println("\n=================================================");
+//                System.out.printf("\n|         Nhấn 'c' để quay trở lại          |");
+//                System.out.printf("\n|         Nhấn 'e' để thoát                 |");
+//                System.out.println("\n=================================================");
                 System.out.println(" ➨ \t");
                 String choice = scanner.nextLine();
                 switch (choice) {

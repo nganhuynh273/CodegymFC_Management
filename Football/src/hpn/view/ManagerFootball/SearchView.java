@@ -20,15 +20,15 @@ public class SearchView {
         boolean isChoice = true;
         int choice = -1;
         do {
-            String leftAlignFormat = "| %-2s | %-50s | %n";
-            String line = "+----+----------------------------------------------------+%n";
-            System.out.format(line);
-            System.out.format("| #  | TÌM KIẾM THÔNG TIN NHÂN VIÊN                                         |%n");
-            System.out.format(line);
-            System.out.format(leftAlignFormat, 1, "Tìm kiếm Cầu thủ");
-            System.out.format(leftAlignFormat, 2, "Tìm kiếm Huấn luyện viên");
-            System.out.format(leftAlignFormat, 0, "Quay lại");
-            System.out.format(line);
+            System.out.print("╔══════════════════════════════════════════════════════════════════╗\n" +
+                    "║                                                                  ║\n" +
+                    "║                     TÌM KIẾM THÔNG TIN NHÂN VIÊN                 ║\n" +
+                    "║                                                                  ║\n" +
+                    "║                   [1] Tìm kiếm Cầu thủ                           ║\n" +
+                    "║                   [2] Tìm kiếm Huấn luyện viên                   ║\n" +
+                    "║                   [0] Quay lại                                   ║\n" +
+                    "║                                                                  ║\n" +
+                    "╚══════════════════════════════════════════════════════════════════╝\n");
             System.out.print("Chọn\t➨ ");
             try {
                 choice = Integer.parseInt(scanner.nextLine());
@@ -55,18 +55,17 @@ public class SearchView {
         boolean isChoose = true;
         int choose = -1;
         do {
-            System.out.println("✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪");
-            System.out.println("✪                  TÌM KIẾM HUẤN LUYỆN VIÊN                 ✪");
-            System.out.println("✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪");
-            System.out.println("✪                                                           ✪");
-            System.out.println("✪                    1. Tìm kiếm theo ID                    ✪");
-            System.out.println("✪                    2. Tìm kiếm theo mã nhân viên          ✪");
-            System.out.println("✪                    3. Tìm kiếm theo tên                   ✪");
-            System.out.println("✪                    4. Quay lại                            ✪");
-            System.out.println("✪                    0. Quay về menu                        ✪");
-            System.out.println("✪                                                           ✪");
-            System.out.println("✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪");
-            System.out.println();
+            System.out.print("╔══════════════════════════════════════════════════════════════════╗\n" +
+                    "║                                                                  ║\n" +
+                    "║                     TÌM KIẾM HUẤN LUYỆN VIÊN                     ║\n" +
+                    "║                                                                  ║\n" +
+                    "║                   [1] Tìm kiếm theo ID                           ║\n" +
+                    "║                   [2] Tìm kiếm theo mã nhân viên                 ║\n" +
+                    "║                   [3] Tìm kiếm theo tên                          ║\n" +
+                    "║                   [4] Quay lại                                   ║\n" +
+                    "║                   [0] Quay về menu                               ║\n" +
+                    "║                                                                  ║\n" +
+                    "╚══════════════════════════════════════════════════════════════════╝\n");
             System.out.print("Chọn\t➨ ");
             try {
                 choose = Integer.parseInt(scanner.nextLine());
@@ -100,29 +99,25 @@ public class SearchView {
         int count = 0;
         System.out.println();
         System.out.print("Nhập tên huấn luyện viên cần tìm kiếm: ");
+        System.out.print("Chọn ➨ ");
         try {
             String search = scanner.nextLine();
             System.out.println("Kết quả tìm kiếm của từ khóa '" + search + "' là : ");
             search = search.toLowerCase();
-            System.out.println("\n------------------------------HUẤN LUYỆN VIÊN ------------------------------------------\n");
+            System.out.println("════════════════════════════════════════════════════ DANH SÁCH HUẤN LUYỆN VIÊN ═══════════════════════════════════════════════════════");
             for (Coach coach : coachList) {
                 if (coach.getTen().toLowerCase().contains(search)) {
                     count++;
-                    System.out.println("\n----------------------------------------------------------------------------------------\n");
-                    System.out.printf("%-30s %-12d\n", "1. ID:", coach.getStaffID());
-                    System.out.printf("%-30s %-12s\n", "2. Mã nhân viên", coach.getMaNhanvien());
-                    System.out.printf("%-30s %-12s\n", "3. Họ và tên:", coach.getTen());
-                    System.out.printf("%-30s %-12s\n", "4. Quốc tịch:", coach.getGioiTinh());
-                    System.out.printf("%-30s %-12s\n", "5. Giới tính:", coach.getGioiTinh());
-                    System.out.printf("%-30s %-12s\n", "6. Ngày sinh:", DateUtils.dateToString(coach.getNgaySinh()));
-                    System.out.printf("%-30s %-12s\n", "7. Ngày vào làm:", DateUtils.dateToString(coach.getNgayVaoLam()));
-                    System.out.printf("%-30s %-12s\n", "8. Số năm kinh nghiệm:", coach.getSoNamKinhNghiem());
-                    System.out.printf("%-30s %-12s\n", "9. Hệ số lương:", coach.getHeSoLuong());
-                    System.out.printf("%-30s %-12s\n", "10. Lương phụ cấp:", format.format(coach.getPhuCap()));
-                    System.out.printf("%-30s %-12s\n", "11. Lương thực nhận:", format.format(coach.tinhLuong()));
-                    System.out.println("\n----------------------------------------------------------------------------------------\n");
+                    System.out.printf("%-12s %-10s %-20s %-20s %-20s %-20s %-20s %-20s\n",
+                            "Thông tin cá nhân: \n", "ID", "Mã nhân viên", "Họ và tên", "Quốc tịch", "Giới tính", "Ngày sinh", "Ngày vào làm");
+                    System.out.printf("%-11s %-13s %17s %18s %15s %27s %20s\n", coach.getStaffID(), coach.getMaNhanvien(), coach.getTen(), coach.getQuocTich(), coach.getGioiTinh(), DateUtils.dateToString(coach.getNgaySinh(), DateUtils.DATE_PATTERN), DateUtils.dateToString(coach.getNgayVaoLam(), DateUtils.DATE_PATTERN));
+
+                    System.out.printf("%-12s %-31s %-20s %-20s %-27s\n",
+                            "Kinh nghiệm làm việc:\n", "Số năm kinh nghiệm", "Hệ số lương", "Lương phụ cấp", "Lương thực nhận");
+                    System.out.printf("%3s %32s %30s %21s\n", coach.getSoNamKinhNghiem(),
+                            coach.getHeSoLuong(), format.format(coach.getPhuCap()), format.format(coach.tinhLuong()));
+                    System.out.println("═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════");
                 }
-                System.out.println("\n----------------------------------------------------------------------------------------\n");
             }
             showReturnSearchCoach(count);
         } catch (Exception e) {
@@ -130,34 +125,31 @@ public class SearchView {
         }
     }
 
+
     public static void searchByMaNhanVienCoach() {
         List<Coach> coachList = coachServiceImpl.getCoachItem();
         int count = 0;
         System.out.println();
         System.out.print("Nhập mã huấn luyện viên cần tìm kiếm: ");
+        System.out.print("Chọn ➨ ");
         try {
             String search = scanner.nextLine();
             System.out.println("Kết quả tìm kiếm của từ khóa '" + search + "' là : ");
             search = search.toLowerCase();
-            System.out.println("\n------------------------------HUẤN LUYỆN VIÊN ------------------------------------------\n");
+            System.out.println("════════════════════════════════════════════════════ DANH SÁCH HUẤN LUYỆN VIÊN ═══════════════════════════════════════════════════════");
             for (Coach coach : coachList) {
                 if (coach.getMaNhanvien().toLowerCase().contains(search)) {
                     count++;
-                    System.out.println("\n----------------------------------------------------------------------------------------\n");
-                    System.out.printf("%-30s %-12d\n", "1. ID:", coach.getStaffID());
-                    System.out.printf("%-30s %-12s\n", "2. Mã nhân viên", coach.getMaNhanvien());
-                    System.out.printf("%-30s %-12s\n", "3. Họ và tên:", coach.getTen());
-                    System.out.printf("%-30s %-12s\n", "4. Quốc tịch:", coach.getGioiTinh());
-                    System.out.printf("%-30s %-12s\n", "5. Giới tính:", coach.getGioiTinh());
-                    System.out.printf("%-30s %-12s\n", "6. Ngày sinh:", DateUtils.dateToString(coach.getNgaySinh()));
-                    System.out.printf("%-30s %-12s\n", "7. Ngày vào làm:", DateUtils.dateToString(coach.getNgayVaoLam()));
-                    System.out.printf("%-30s %-12s\n", "8. Số năm kinh nghiệm:", coach.getSoNamKinhNghiem());
-                    System.out.printf("%-30s %-12s\n", "9. Hệ số lương:", coach.getHeSoLuong());
-                    System.out.printf("%-30s %-12s\n", "10. Lương phụ cấp:", format.format(coach.getPhuCap()));
-                    System.out.printf("%-30s %-12s\n", "11. Lương thực nhận:", format.format(coach.tinhLuong()));
-                    System.out.println("\n----------------------------------------------------------------------------------------\n");
+                    System.out.printf("%-12s %-10s %-20s %-20s %-20s %-20s %-20s %-20s\n",
+                            "Thông tin cá nhân: \n", "ID", "Mã nhân viên", "Họ và tên", "Quốc tịch", "Giới tính", "Ngày sinh", "Ngày vào làm");
+                    System.out.printf("%-11s %-13s %17s %18s %15s %27s %20s\n", coach.getStaffID(), coach.getMaNhanvien(), coach.getTen(), coach.getQuocTich(), coach.getGioiTinh(), DateUtils.dateToString(coach.getNgaySinh(), DateUtils.DATE_PATTERN), DateUtils.dateToString(coach.getNgayVaoLam(), DateUtils.DATE_PATTERN));
+
+                    System.out.printf("%-12s %-31s %-20s %-20s %-27s\n",
+                            "Kinh nghiệm làm việc:\n", "Số năm kinh nghiệm", "Hệ số lương", "Lương phụ cấp", "Lương thực nhận");
+                    System.out.printf("%3s %32s %30s %21s\n", coach.getSoNamKinhNghiem(),
+                            coach.getHeSoLuong(), format.format(coach.getPhuCap()), format.format(coach.tinhLuong()));
+                    System.out.println("═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════");
                 }
-                System.out.println("\n----------------------------------------------------------------------------------------\n");
             }
             showReturnSearchCoach(count);
         } catch (Exception e) {
@@ -173,25 +165,20 @@ public class SearchView {
         try {
             int search = Integer.parseInt(scanner.nextLine());
             System.out.println("Kết quả tìm kiếm của từ khóa '" + search + "' là : ");
-            System.out.println("\n------------------------------HUẤN LUYỆN VIÊN ------------------------------------------\n");
+            System.out.println("════════════════════════════════════════════════════ DANH SÁCH HUẤN LUYỆN VIÊN ═══════════════════════════════════════════════════════");
             for (Coach coach : coachList) {
                 if (coach.getStaffID() == search) {
                     count++;
-                    System.out.println("\n----------------------------------------------------------------------------------------\n");
-                    System.out.printf("%-30s %-12d\n", "1. ID:", coach.getStaffID());
-                    System.out.printf("%-30s %-12s\n", "2. Mã nhân viên", coach.getMaNhanvien());
-                    System.out.printf("%-30s %-12s\n", "3. Họ và tên:", coach.getTen());
-                    System.out.printf("%-30s %-12s\n", "4. Quốc tịch:", coach.getGioiTinh());
-                    System.out.printf("%-30s %-12s\n", "5. Giới tính:", coach.getGioiTinh());
-                    System.out.printf("%-30s %-12s\n", "6. Ngày sinh:", DateUtils.dateToString(coach.getNgaySinh()));
-                    System.out.printf("%-30s %-12s\n", "7. Ngày vào làm:", DateUtils.dateToString(coach.getNgayVaoLam()));
-                    System.out.printf("%-30s %-12s\n", "8. Số năm kinh nghiệm:", coach.getSoNamKinhNghiem());
-                    System.out.printf("%-30s %-12s\n", "9. Hệ số lương:", coach.getHeSoLuong());
-                    System.out.printf("%-30s %-12s\n", "10. Lương phụ cấp:", format.format(coach.getPhuCap()));
-                    System.out.printf("%-30s %-12s\n", "11. Lương thực nhận:", format.format(coach.tinhLuong()));
-                    System.out.println("\n----------------------------------------------------------------------------------------\n");
+                    System.out.printf("%-12s %-10s %-20s %-20s %-20s %-20s %-20s %-20s\n",
+                            "Thông tin cá nhân: \n", "ID", "Mã nhân viên", "Họ và tên", "Quốc tịch", "Giới tính", "Ngày sinh", "Ngày vào làm");
+                    System.out.printf("%-11s %-13s %17s %18s %15s %27s %20s\n", coach.getStaffID(), coach.getMaNhanvien(), coach.getTen(), coach.getQuocTich(), coach.getGioiTinh(), DateUtils.dateToString(coach.getNgaySinh(), DateUtils.DATE_PATTERN), DateUtils.dateToString(coach.getNgayVaoLam(), DateUtils.DATE_PATTERN));
+
+                    System.out.printf("%-12s %-31s %-20s %-20s %-27s\n",
+                            "Kinh nghiệm làm việc:\n", "Số năm kinh nghiệm", "Hệ số lương", "Lương phụ cấp", "Lương thực nhận");
+                    System.out.printf("%3s %32s %30s %21s\n", coach.getSoNamKinhNghiem(),
+                            coach.getHeSoLuong(), format.format(coach.getPhuCap()), format.format(coach.tinhLuong()));
+                    System.out.println("═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════");
                 }
-                System.out.println("\n----------------------------------------------------------------------------------------\n");
             }
             showReturnSearchCoach(count);
         } catch (Exception e) {
@@ -205,8 +192,12 @@ public class SearchView {
         boolean isChoice = false;
         System.out.println();
         do {
-            System.out.print("Nhấn 'r' để về trở lại! \n "
-                    + "Nhấn 'c' để về menu tìm kiếm ");
+            System.out.print("╔══════════════════════════════════════════════════════════════════╗\n" +
+                    "║                                                                  ║\n" +
+                    "║                   [1] Nhấn 'r' để về trở lại                     ║\n" +
+                    "║                   [2] Nhấn 'c' để về menu tìm kiếm               ║\n" +
+                    "║                                                                  ║\n" +
+                    "╚══════════════════════════════════════════════════════════════════╝\n");
             System.out.print("➨ ");
             try {
                 press = scanner.nextLine().charAt(0);
@@ -233,17 +224,18 @@ public class SearchView {
         boolean isChoose = true;
         int choose = -1;
         do {
-            System.out.println("✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪");
-            System.out.println("✪                       TÌM KIẾM CẦU THỦ                    ✪");
-            System.out.println("✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪");
-            System.out.println("✪                                                           ✪");
-            System.out.println("✪                    1. Tìm kiếm theo ID                    ✪");
-            System.out.println("✪                    2. Tìm kiếm theo mã nhân viên          ✪");
-            System.out.println("✪                    3. Tìm kiếm theo tên                   ✪");
-            System.out.println("✪                    4. Quay lại                            ✪");
-            System.out.println("✪                    0. Quay về menu                        ✪");
-            System.out.println("✪                                                           ✪");
-            System.out.println("✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪✪");
+            System.out.print("╔══════════════════════════════════════════════════════════════════╗\n" +
+                    "║                                                                  ║\n" +
+                    "║                         TÌM KIẾM CẦU THỦ                         ║\n" +
+                    "║                                                                  ║\n" +
+                    "║                   [1] Tìm kiếm theo ID                           ║\n" +
+                    "║                   [2] Tìm kiếm theo mã nhân viên                 ║\n" +
+                    "║                   [3] Tìm kiếm theo tên                          ║\n" +
+                    "║                   [4] Quay lại                                   ║\n" +
+                    "║                   [0] Quay về menu                               ║\n" +
+                    "║                                                                  ║\n" +
+                    "╚══════════════════════════════════════════════════════════════════╝\n");
+
             System.out.println();
             System.out.print("Chọn\t➨ ");
             try {
@@ -285,19 +277,19 @@ public class SearchView {
             String search = scanner.nextLine();
             System.out.println("Kết quả tìm kiếm của từ khóa '" + search + "' là : ");
             search = search.toLowerCase();
-            System.out.println("\n------------------------------ CẦU THỦ ------------------------------------------\n");
-            String leftAlignFormat = "| %-7s | %-7s| %-13s | %-9s | %-9s | %-10s | %-13s | %-13s | %-7s | %-9s | %-16s | %-16%s |%n";
-            String line = "+---------+---------+---------------+-----------+-----------+------------+---------------+---------------+---------+-----------+------------------+------------------+%n";
-            System.out.format(line);
-            System.out.format("| ID   | Mã nhân viên | Họ và tên    | Quốc tịch | Giới tính | Ngày sinh  | Ngày vào làm  | Số bàn thắng ghi vào lưới | Vị trí thi đấu | Số lượt tham gia thi đấu | Lương thỏa thuận | Lương thỏa thuận |%n");
+            System.out.println("════════════════════════════════════════════════════ DANH SÁCH CẦU THỦ ════════════════════════════════════════════════════════════════");
             for (Footballer footballer : footballerList) {
                 if (footballer.getTen().toLowerCase().contains(search)) {
                     count++;
-                    System.out.format(line);
-                    System.out.format(leftAlignFormat, footballer.getStaffID(), footballer.getMaNhanvien(), footballer.getTen(), footballer.getQuocTich(), footballer.getGioiTinh(), footballer.getNgaySinh(), footballer.getNgayVaoLam(), footballer.getBanThang(),
+                    System.out.printf("%-12s %-10s %-20s %-20s %-20s %-20s %-20s %-20s\n",
+                            "Thông tin cá nhân: \n", "ID", "Mã nhân viên", "Họ và tên", "Quốc tịch", "Giới tính", "Ngày sinh", "Ngày vào làm");
+                    System.out.printf("%-11s %-13s %17s %18s %15s %27s %20s\n", footballer.getStaffID(), footballer.getMaNhanvien(), footballer.getTen(), footballer.getQuocTich(), footballer.getGioiTinh(), DateUtils.dateToString(footballer.getNgaySinh(), DateUtils.DATE_PATTERN), DateUtils.dateToString(footballer.getNgayVaoLam(), DateUtils.DATE_PATTERN));
+
+                    System.out.printf("%-12s %-31s %-20s %-30s %-27s %-15s\n",
+                            "Thông tin thi đấu:\n", "Số bàn thắng ghi vào lưới", "Vị trí thi đấu", "Lượt tham gia thi đấu", "Lương thỏa thuận", "Lương thực nhận");
+                    System.out.printf("%3s %36s %15s %42s %27s\n", footballer.getBanThang(),
                             footballer.getViTriThiDau(), footballer.getSoLuotTranThamGia(), format.format(footballer.getLuongThoaThuan()), format.format(footballer.tinhLuong()));
-                    System.out.format(line);
-                    System.out.println("\n----------------------------------------------------------------------------------------\n");
+                    System.out.println("═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════");
                 }
             }
             showReturnSearchCoach(count);
@@ -305,6 +297,7 @@ public class SearchView {
             System.out.println("Không hợp lệ. Vui lòng nhập lại!");
         }
     }
+
     public static void searchByTenFootball() {
         List<Footballer> footballerList = footballerServiceImpl.getFootballerItem();
         int count = 0;
@@ -314,26 +307,20 @@ public class SearchView {
             String search = scanner.nextLine();
             System.out.println("Kết quả tìm kiếm của từ khóa '" + search + "' là : ");
             search = search.toLowerCase();
-            System.out.println("\n------------------------------ CẦU THỦ ------------------------------------------\n");
+            System.out.println("════════════════════════════════════════════════════ DANH SÁCH CẦU THỦ ════════════════════════════════════════════════════════════════");
             for (Footballer footballer : footballerList) {
                 if (footballer.getTen().toLowerCase().contains(search)) {
                     count++;
-                    System.out.println("\n----------------------------------------------------------------------------------------\n");
-                    System.out.printf("%-30s %-12d\n", "1. ID:", footballer.getStaffID());
-                    System.out.printf("%-30s %-12s\n", "2. Mã nhân viên", footballer.getMaNhanvien());
-                    System.out.printf("%-30s %-12s\n", "3. Họ và tên:", footballer.getTen());
-                    System.out.printf("%-30s %-12s\n", "4. Quốc tịch:", footballer.getGioiTinh());
-                    System.out.printf("%-30s %-12s\n", "5. Giới tính:", footballer.getGioiTinh());
-                    System.out.printf("%-30s %-12s\n", "6. Ngày sinh:", DateUtils.dateToString(footballer.getNgaySinh()));
-                    System.out.printf("%-30s %-12s\n", "7. Ngày vào làm:", DateUtils.dateToString(footballer.getNgayVaoLam()));
-                    System.out.printf("%-30s %-12s\n", "8. Số bàn thắng ghi vào lưới:", footballer.getBanThang());
-                    System.out.printf("%-30s %-12s\n", "9. Vị trí thi đấu:", footballer.getViTriThiDau());
-                    System.out.printf("%-30s %-12s\n", "10. Số lượt tham gia thi đấu):", footballer.getSoLuotTranThamGia());
-                    System.out.printf("%-30s %-12s\n", "11. Lương thỏa thuận:", footballer.getLuongThoaThuan());
-                    System.out.printf("%-30s %-12s\n", "12. Lương thực nhận:", format.format(footballer.tinhLuong()));
-                    System.out.println("\n----------------------------------------------------------------------------------------\n");
+                    System.out.printf("%-12s %-10s %-20s %-20s %-20s %-20s %-20s %-20s\n",
+                            "Thông tin cá nhân: \n", "ID", "Mã nhân viên", "Họ và tên", "Quốc tịch", "Giới tính", "Ngày sinh", "Ngày vào làm");
+                    System.out.printf("%-11s %-13s %17s %18s %15s %27s %20s\n", footballer.getStaffID(), footballer.getMaNhanvien(), footballer.getTen(), footballer.getQuocTich(), footballer.getGioiTinh(), DateUtils.dateToString(footballer.getNgaySinh(), DateUtils.DATE_PATTERN), DateUtils.dateToString(footballer.getNgayVaoLam(), DateUtils.DATE_PATTERN));
+
+                    System.out.printf("%-12s %-31s %-20s %-30s %-27s %-15s\n",
+                            "Thông tin thi đấu:\n", "Số bàn thắng ghi vào lưới", "Vị trí thi đấu", "Lượt tham gia thi đấu", "Lương thỏa thuận", "Lương thực nhận");
+                    System.out.printf("%3s %36s %15s %42s %27s\n", footballer.getBanThang(),
+                            footballer.getViTriThiDau(), footballer.getSoLuotTranThamGia(), format.format(footballer.getLuongThoaThuan()), format.format(footballer.tinhLuong()));
+                    System.out.println("═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════");
                 }
-                System.out.println("\n----------------------------------------------------------------------------------------\n");
             }
             showReturnSearchCoach(count);
         } catch (Exception e) {
@@ -351,26 +338,20 @@ public class SearchView {
             String search = scanner.nextLine();
             System.out.println("Kết quả tìm kiếm của từ khóa '" + search + "' là : ");
             search = search.toLowerCase();
-            System.out.println("\n------------------------------ CẦU THỦ ------------------------------------------\n");
+            System.out.println("════════════════════════════════════════════════════ DANH SÁCH CẦU THỦ ════════════════════════════════════════════════════════════════");
             for (Footballer footballer : footballerList) {
                 if (footballer.getMaNhanvien().toLowerCase().contains(search)) {
                     count++;
-                    System.out.println("\n----------------------------------------------------------------------------------------\n");
-                    System.out.printf("%-30s %-12d\n", "1. ID:", footballer.getStaffID());
-                    System.out.printf("%-30s %-12s\n", "2. Mã nhân viên", footballer.getMaNhanvien());
-                    System.out.printf("%-30s %-12s\n", "3. Họ và tên:", footballer.getTen());
-                    System.out.printf("%-30s %-12s\n", "4. Quốc tịch:", footballer.getGioiTinh());
-                    System.out.printf("%-30s %-12s\n", "5. Giới tính:", footballer.getGioiTinh());
-                    System.out.printf("%-30s %-12s\n", "6. Ngày sinh:", DateUtils.dateToString(footballer.getNgaySinh()));
-                    System.out.printf("%-30s %-12s\n", "7. Ngày vào làm:", DateUtils.dateToString(footballer.getNgayVaoLam()));
-                    System.out.printf("%-30s %-12s\n", "8. Số bàn thắng ghi vào lưới:", footballer.getBanThang());
-                    System.out.printf("%-30s %-12s\n", "9. Vị trí thi đấu:", footballer.getViTriThiDau());
-                    System.out.printf("%-30s %-12s\n", "10. Số lượt tham gia thi đấu):", footballer.getSoLuotTranThamGia());
-                    System.out.printf("%-30s %-12s\n", "11. Lương thỏa thuận:", footballer.getLuongThoaThuan());
-                    System.out.printf("%-30s %-12s\n", "12. Lương thực nhận:", format.format(footballer.tinhLuong()));
-                    System.out.println("\n----------------------------------------------------------------------------------------\n");
+                    System.out.printf("%-12s %-10s %-20s %-20s %-20s %-20s %-20s %-20s\n",
+                            "Thông tin cá nhân: \n", "ID", "Mã nhân viên", "Họ và tên", "Quốc tịch", "Giới tính", "Ngày sinh", "Ngày vào làm");
+                    System.out.printf("%-11s %-13s %17s %18s %15s %27s %20s\n", footballer.getStaffID(), footballer.getMaNhanvien(), footballer.getTen(), footballer.getQuocTich(), footballer.getGioiTinh(), DateUtils.dateToString(footballer.getNgaySinh(), DateUtils.DATE_PATTERN), DateUtils.dateToString(footballer.getNgayVaoLam(), DateUtils.DATE_PATTERN));
+
+                    System.out.printf("%-12s %-31s %-20s %-30s %-27s %-15s\n",
+                            "Thông tin thi đấu:\n", "Số bàn thắng ghi vào lưới", "Vị trí thi đấu", "Lượt tham gia thi đấu", "Lương thỏa thuận", "Lương thực nhận");
+                    System.out.printf("%3s %36s %15s %42s %27s\n", footballer.getBanThang(),
+                            footballer.getViTriThiDau(), footballer.getSoLuotTranThamGia(), format.format(footballer.getLuongThoaThuan()), format.format(footballer.tinhLuong()));
+                    System.out.println("═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════");
                 }
-                System.out.println("\n----------------------------------------------------------------------------------------\n");
             }
             showReturnSearchCoach(count);
         } catch (Exception e) {
@@ -387,23 +368,19 @@ public class SearchView {
         try {
             int search = Integer.parseInt(scanner.nextLine());
             System.out.println("Kết quả tìm kiếm của từ khóa '" + search + "' là : ");
-            System.out.println("\n------------------------------ CẦU THỦ ------------------------------------------\n");
+            System.out.println("════════════════════════════════════════════════════ DANH SÁCH CẦU THỦ ════════════════════════════════════════════════════════════════");
             for (Footballer footballer : footballerList) {
                 if (footballer.getStaffID() == search) {
                     count++;
-                    System.out.printf("%-30s %-12d\n", "1. ID:", footballer.getStaffID());
-                    System.out.printf("%-30s %-12s\n", "2. Mã nhân viên", footballer.getMaNhanvien());
-                    System.out.printf("%-30s %-12s\n", "3. Họ và tên:", footballer.getTen());
-                    System.out.printf("%-30s %-12s\n", "4. Quốc tịch:", footballer.getGioiTinh());
-                    System.out.printf("%-30s %-12s\n", "5. Giới tính:", footballer.getGioiTinh());
-                    System.out.printf("%-30s %-12s\n", "6. Ngày sinh:", DateUtils.dateToString(footballer.getNgaySinh()));
-                    System.out.printf("%-30s %-12s\n", "7. Ngày vào làm:", DateUtils.dateToString(footballer.getNgayVaoLam()));
-                    System.out.printf("%-30s %-12s\n", "8. Số bàn thắng ghi vào lưới:", footballer.getBanThang());
-                    System.out.printf("%-30s %-12s\n", "9. Vị trí thi đấu:", footballer.getViTriThiDau());
-                    System.out.printf("%-30s %-12s\n", "10. Số lượt tham gia thi đấu):", footballer.getSoLuotTranThamGia());
-                    System.out.printf("%-30s %-12s\n", "11. Lương thỏa thuận:", footballer.getLuongThoaThuan());
-                    System.out.printf("%-30s %-12s\n", "12. Lương thực nhận:", format.format(footballer.tinhLuong()));
-                    System.out.println("\n----------------------------------------------------------------------------------------\n");
+                    System.out.printf("%-12s %-10s %-20s %-20s %-20s %-20s %-20s %-20s\n",
+                            "Thông tin cá nhân: \n", "ID", "Mã nhân viên", "Họ và tên", "Quốc tịch", "Giới tính", "Ngày sinh", "Ngày vào làm");
+                    System.out.printf("%-11s %-13s %17s %18s %15s %27s %20s\n", footballer.getStaffID(), footballer.getMaNhanvien(), footballer.getTen(), footballer.getQuocTich(), footballer.getGioiTinh(), DateUtils.dateToString(footballer.getNgaySinh(), DateUtils.DATE_PATTERN), DateUtils.dateToString(footballer.getNgayVaoLam(), DateUtils.DATE_PATTERN));
+
+                    System.out.printf("%-12s %-31s %-20s %-30s %-27s %-15s\n",
+                            "Thông tin thi đấu:\n", "Số bàn thắng ghi vào lưới", "Vị trí thi đấu", "Lượt tham gia thi đấu", "Lương thỏa thuận", "Lương thực nhận");
+                    System.out.printf("%3s %36s %15s %42s %27s\n", footballer.getBanThang(),
+                            footballer.getViTriThiDau(), footballer.getSoLuotTranThamGia(), format.format(footballer.getLuongThoaThuan()), format.format(footballer.tinhLuong()));
+                    System.out.println("═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════");
                 }
             }
             showReturnSearchFootball(count);
@@ -411,7 +388,7 @@ public class SearchView {
             System.out.println("Không hợp lệ. Vui lòng nhập lại!");
         }
 
-}
+    }
 
     public static void showReturnSearchFootball(int count) {
         System.out.println("Có '" + count + "' cầu thủ được tìm thấy!");
@@ -419,8 +396,12 @@ public class SearchView {
         boolean isChoice = false;
         System.out.println();
         do {
-            System.out.print("Nhấn 'r' để về trở lại! \n "
-                    + "Nhấn 'c' để về menu tìm kiếm ");
+            System.out.print("╔══════════════════════════════════════════════════════════════════╗\n" +
+                    "║                                                                  ║\n" +
+                    "║                   [1] Nhấn 'r' để về trở lại                     ║\n" +
+                    "║                   [2] Nhấn 'c' để về menu tìm kiếm               ║\n" +
+                    "║                                                                  ║\n" +
+                    "╚══════════════════════════════════════════════════════════════════╝\n");
             System.out.print("➨ ");
             try {
                 press = scanner.nextLine().charAt(0);

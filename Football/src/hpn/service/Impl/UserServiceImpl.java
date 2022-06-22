@@ -1,75 +1,95 @@
 package hpn.service.Impl;
 
+import hpn.model.Role;
 import hpn.model.User;
 import hpn.service.IUserService;
 import hpn.utils.CSVUtils;
 
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
+import java.util.function.Predicate;
 
 public class UserServiceImpl implements IUserService {
-    public static String path = "data/users.csv";
+    public final static String PATH = "data/users.csv";
+
+    private static UserServiceImpl instance;
+
+    private UserServiceImpl() {
+    }
+
+    public static UserServiceImpl getInstance() {
+        if (instance == null)
+            instance = new UserServiceImpl();
+        return instance;
+    }
+
 
     @Override
-    public List<User> getUsers() {
-        List<User> newUsersList = new ArrayList<>();
-        List<String> records = CSVUtils.readData(path);
+    public List<User> findAll() {
+        List<User> users = new ArrayList<>();
+        List<String> records = CSVUtils.readData(PATH);
         for (String record : records) {
-            newUsersList.add(new User(record));
+            users.add(User.parseUser(record));
         }
-        return newUsersList;
+        return users;
     }
 
     @Override
     public User login(String username, String password) {
-        List<User> users = getUsers();
+        List<User> users = findAll();
         for (User user : users) {
-            if (user.getUserName().equals(username) && user.getPassword().equals(password))
+            if (user.getUsername().equals(username) && user.getPassword().equals(password)){
                 return user;
+            }
         }
         return null;
     }
 
     @Override
     public void add(User newUser) {
-        List<User> users = getUsers();
+        newUser.setCreatedAt(Instant.now());
+        List<User> users = findAll();
         users.add(newUser);
-        CSVUtils.writeData(path, users);
+        CSVUtils.writeData(PATH, users);
     }
 
     @Override
     public void update(User newUser) {
-        List<User> users = getUsers();
+        List<User> users = findAll();
         for (User user : users) {
             if (user.getId() == newUser.getId()) {
-                if (newUser.getFullName() != null && !newUser.getFullName().isEmpty())
-                    user.setFullName(newUser.getFullName());
-                if (newUser.getBirthday() != null && !newUser.getBirthday().isEmpty())
-                    user.setBirthday(newUser.getBirthday());
-                if (newUser.getPhoneNumber() != null && !newUser.getPhoneNumber().isEmpty())
-                    user.setPhoneNumber(newUser.getPhoneNumber());
-                if (newUser.getAddress() != null && !newUser.getAddress().isEmpty())
+                String fullName = newUser.getFullName();
+                if (fullName != null && !fullName.isEmpty())
+                    user.setFullName(fullName);
+                String phone = newUser.getPhone();
+                if (phone != null && !phone.isEmpty())
+                    user.setPhone(newUser.getPhone());
+                String address = newUser.getAddress();
+                if (address != null && !address.isEmpty())
                     user.setAddress(newUser.getAddress());
-                if (newUser.getEmail() != null && !newUser.getEmail().isEmpty())
+                String email = newUser.getEmail();
+                if (email !=null && !email.isEmpty())
                     user.setEmail(newUser.getEmail());
-                if (newUser.getUserName() != null && !newUser.getUserName().isEmpty())
-                    user.setUserName(newUser.getUserName());
-                if (newUser.getPassword() != null && !newUser.getPassword().isEmpty())
-                    user.setPassword(newUser.getPassword());
-                CSVUtils.writeData(path, users);
+                Role role = newUser.getRole();
+                if (role != null)
+                    user.setRole(newUser.getRole());
+                user.setUpdatedAt(Instant.now());
+                CSVUtils.writeData(PATH, users);
                 break;
             }
         }
     }
 
     @Override
-    public boolean isIdExisted(long id) {
-        return getUserById(id) != null;
+    public boolean existById(long id) {
+        return findById(id) != null;
     }
 
     @Override
-    public boolean checkExistedEmail(String email) {
-        List<User> users = getUsers();
+    public boolean existsByEmail(String email) {
+        List<User> users = findAll();
         for (User user : users) {
             if (user.getEmail().equals(email))
                 return true;
@@ -78,32 +98,60 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public boolean checkExistedPhone(String phone) {
-        List<User> users = getUsers();
+    public boolean existsByPhone(String phone) {
+        List<User> users = findAll();
         for (User user : users) {
-            if (user.getPhoneNumber().equals(phone))
+            if (user.getPhone().equals(phone))
                 return true;
         }
         return false;
     }
 
     @Override
-    public boolean checkExistedUserName(String userName) {
-        List<User> users = getUsers();
+    public boolean existsByUsername(String userName) {
+        List<User> users = findAll();
         for (User user : users) {
-            if (user.getUserName().equals(userName))
+            if (user.getUsername().equals(userName))
                 return true;
         }
         return false;
     }
 
     @Override
-    public User getUserById(long id) {
-        List<User> users = getUsers();
+    public User findById(int id) {
+        return null;
+    }
+
+    @Override
+    public User findById(long id) {
+        List<User> users = findAll();
         for (User user : users) {
             if (user.getId() == id)
                 return user;
         }
         return null;
+    }
+
+    @Override
+    public boolean exists(long id) {
+        List<User> users = findAll();
+        for (User user : users) {
+            if (user.getId() == id) return true;
+        }
+        return false;
+    }
+
+    @Override
+    public void deleteById(long id) {
+        List<User> users = findAll();
+
+        //class vo danh
+        users.removeIf(new Predicate<User>() {
+            @Override
+            public boolean test(User user) {
+                return user.getId() == id;
+            }
+        });
+        CSVUtils.writeData(PATH, users);
     }
 }

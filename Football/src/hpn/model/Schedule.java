@@ -5,6 +5,7 @@ import hpn.utils.DateUtils;
 import java.util.Date;
 
 public class Schedule {
+    private long ID;
     private String maDoi;
     private String tenDoi;
     private String tenHLV;
@@ -18,18 +19,28 @@ public class Schedule {
 
     public Schedule(String record) {
         String[] fields = record.split(",");
-        tranThiDau = fields[0];
-        ngayThidau = DateUtils.stringToDate(fields[1], DateUtils.DATE_PATTERN);
-        gioThiDau = fields[2];
-        sanThiDau = fields[3];
+        ID = Long.parseLong(fields[0]);
+        tranThiDau = fields[1];
+        ngayThidau = DateUtils.stringToDate(fields[2], DateUtils.DATE_PATTERN);
+        gioThiDau = fields[3];
+        sanThiDau = fields[4];
     }
 
-    public Schedule(String tranThiDau, Date ngayThiDau, String gioThiDau, String sanThiDau) {
+    public Schedule(long ID,String tranThiDau, Date ngayThiDau, String gioThiDau, String sanThiDau) {
+        this.ID = ID;
         this.tranThiDau = tranThiDau;
         this.ngayThidau = ngayThiDau;
         this.gioThiDau = gioThiDau;
         this.sanThiDau = sanThiDau;
 
+    }
+
+    public long getID() {
+        return ID;
+    }
+
+    public void setID(long ID) {
+        this.ID = ID;
     }
 
     public String getMaDoi() {
@@ -91,10 +102,10 @@ public class Schedule {
     @Override
     public String toString() {
         String fdateNgayThiDau = DateUtils.dateToString(ngayThidau, DateUtils.DATE_PATTERN);
-        return tranThiDau +
-                ", " + ngayThidau +
-                ", " + gioThiDau +
-                ", " + sanThiDau;
+        return ID + "," + tranThiDau +
+                "," + ngayThidau +
+                "," + gioThiDau +
+                "," + sanThiDau;
     }
 
 }

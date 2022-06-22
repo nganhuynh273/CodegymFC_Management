@@ -2,17 +2,14 @@ package hpn.view.ManagerSchedule;
 
 import hpn.model.Schedule;
 import hpn.service.Impl.ScheduleServiceImpl;
-import hpn.utils.ConvertUtils;
 import hpn.utils.DateUtils;
 import hpn.utils.ValidationUtils;
-import hpn.view.ManagerFootball.AddView;
-import hpn.view.ManagerFootball.FootballView;
-import hpn.view.ManagerFootball.SortView.SortFootballer;
 import hpn.view.Menu;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Random;
 import java.util.Scanner;
 
 public class CreateScheduleView {
@@ -21,6 +18,13 @@ public class CreateScheduleView {
 
     public static void createSchedule() {
         try {
+            int id;
+            Random r = new Random();
+            int low = 1;
+            int high = 9999;
+            do {
+                id = r.nextInt(high - low) + low;
+            } while (scheduleService.exists(id));
             System.out.println("Nhập trận thi đấu \n➨");
             String tranThiDau = scanner.nextLine().trim();
             while (!ValidationUtils.isNameValid(tranThiDau)) {
@@ -60,18 +64,19 @@ public class CreateScheduleView {
                 sanThiDau = scanner.nextLine();
             }
 
-            Schedule schedule = new Schedule(tranThiDau, ngayThiDauHopLe, gioThiDau, sanThiDau);
+            Schedule schedule = new Schedule(id,tranThiDau, ngayThiDauHopLe, gioThiDau, sanThiDau);
             scheduleService.addScheduleItem(schedule);
             System.out.println("Lịch thi đấu được tạo thành công!");
             do {
-                System.out.println("❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂");
-                System.out.println("❂                                         ❂");
-                System.out.println("❂     1. Nhấn 'y' để tạo thêm danh sách   ❂");
-                System.out.println("❂     2. Nhấn 'c' để trở lại              ❂");
-                System.out.println("❂     3. nhấp 'p' để in danh sách         ❂");
-                System.out.println("❂     4. Nhấn 't' để thoát                ❂");
-                System.out.println("❂                                         ❂");
-                System.out.println("❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂");
+                System.out.print("╔══════════════════════════════════════════════════════════════════╗\n" +
+                        "║                                                                  ║\n" +
+                        "║                                                                  ║\n" +
+                        "║                   [1] Nhấn 'y' để tạo thêm danh sách             ║\n" +
+                        "║                   [2] Nhấn 'c' để trở lại                        ║\n" +
+                        "║                   [3] Nhấp 'p' để in danh sách                   ║\n" +
+                        "║                   [4] Nhấn 't' để thoát                          ║\n" +
+                        "║                                                                  ║\n" +
+                        "╚══════════════════════════════════════════════════════════════════╝\n");
                 System.out.print("➨ ");
                 String choice = scanner.nextLine();
                 switch (choice) {
@@ -103,7 +108,16 @@ public class CreateScheduleView {
 
     public static void showScheduleInfo(Schedule schedule) {
         try {
-            System.out.println("\n--------------------------------- TRẬN ĐẤU ------------------------------------------\n");
+            System.out.print("╔══════════════════════════════════════════════════════════════════╗\n" +
+                    "║                                                                  ║\n" +
+                    "║                     TRẬN ĐẤU                  ║\n" +
+                    "║                                                                  ║\n" +
+                    "║                   [1] Trận d                 ║\n" +
+                    "║                   [2] Hiển thị danh sách Huấn luyện viên         ║\n" +
+                    "║                   [0] Quay lại                                   ║\n" +
+                    "║                                                                  ║\n" +
+                    "╚══════════════════════════════════════════════════════════════════╝\n");
+            System.out.println("\n══════════════════════════════════ TRẬN ĐẤU ══════════════════════════════════n");
             System.out.printf("%-30s %-12s\n", "1. Trận đấu:", schedule.getTranThiDau());
             System.out.printf("%-30s %-12s\n", "2. Ngày thi đấu", DateUtils.dateToString(schedule.getNgayThidau()));
             System.out.printf("%-30s %-12s\n", "3. Giờ thi đấu:", schedule.getGioThiDau());

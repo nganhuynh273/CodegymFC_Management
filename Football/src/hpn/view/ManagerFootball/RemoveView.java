@@ -23,15 +23,15 @@ public class RemoveView {
         boolean isChoice = true;
         int choice = -1;
         do {
-            String leftAlignFormat = "| %-2s | %-50s | %n";
-            String line = "+----+----------------------------------------------------+%n";
-            System.out.format(line);
-            System.out.format("| #  | XÓA THÔNG TIN NHÂN VIÊN                                         |%n");
-            System.out.format(line);
-            System.out.format(leftAlignFormat, 1, "Xóa thông tin Cầu thủ");
-            System.out.format(leftAlignFormat, 2, "Xóa thông tin Huấn luyện viên");
-            System.out.format(leftAlignFormat, 0, "Quay lại");
-            System.out.format(line);
+            System.out.print("╔══════════════════════════════════════════════════════════════════╗\n" +
+                    "║                                                                  ║\n" +
+                    "║                     SA THẢI NHÂN VIÊN                            ║\n" +
+                    "║                                                                  ║\n" +
+                    "║                   [1] Sa thải Cầu thủ                            ║\n" +
+                    "║                   [2] Sa thải Huấn luyện viên                    ║\n" +
+                    "║                   [0] Quay lại                                   ║\n" +
+                    "║                                                                  ║\n" +
+                    "╚══════════════════════════════════════════════════════════════════╝\n");
             System.out.print("Chọn\t➨ ");
             try {
                 choice = Integer.parseInt(scanner.nextLine());
@@ -71,12 +71,15 @@ public class RemoveView {
                         System.out.println("Đã xóa thành công Huấn luyện viên khỏi danh sách!");
                         showCoach(coachServiceImpl.getCoachItem());
                         do {
-                            System.out.println("❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂");
-                            System.out.println("❂   Nhấn '1' để quay lại           ❂");
-                            System.out.println("❂   Nhấn '2' để quay lại menu      ❂");
-                            System.out.println("❂   Nhấn '3' để về menu chính      ❂");
-                            System.out.println("❂   Nhấn '0' để thoát              ❂");
-                            System.out.println("❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂");
+                            System.out.print("╔══════════════════════════════════════════════════════════════════╗\n" +
+                                    "║                                                                  ║\n" +
+                                    "║                                                                  ║\n" +
+                                    "║                   [1] Nhấn '1' để quay lại                       ║\n" +
+                                    "║                   [2] Nhấn '2' để quay lại menu                  ║\n" +
+                                    "║                   [3] Nhấn '3' để về menu chính                  ║\n" +
+                                    "║                   [4] Nhấn '0' để thoát                          ║\n" +
+                                    "║                                                                  ║\n" +
+                                    "╚══════════════════════════════════════════════════════════════════╝\n");
                             System.out.printf("➨ \t");
                             byte choice = Byte.parseByte(scanner.nextLine());
                             switch (choice) {
@@ -130,12 +133,15 @@ public class RemoveView {
                         System.out.println("Đã xóa thành công Cầu thủ khỏi danh sách!");
                         showFootballer(footballerServiceImpl.getFootballerItem());
                         do {
-                            System.out.println("❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂");
-                            System.out.println("❂   Nhấn '1' để quay lại           ❂");
-                            System.out.println("❂   Nhấn '2' để quay lại menu      ❂");
-                            System.out.println("❂   Nhấn '3' để về menu chính      ❂");
-                            System.out.println("❂   Nhấn '0' để thoát              ❂");
-                            System.out.println("❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂");
+                            System.out.print("╔══════════════════════════════════════════════════════════════════╗\n" +
+                                    "║                                                                  ║\n" +
+                                    "║                                                                  ║\n" +
+                                    "║                   [1] Nhấn '1' để quay lại                       ║\n" +
+                                    "║                   [2] Nhấn '2' để quay lại menu                  ║\n" +
+                                    "║                   [3] Nhấn '3' để về menu chính                  ║\n" +
+                                    "║                   [4] Nhấn '0' để thoát                          ║\n" +
+                                    "║                                                                  ║\n" +
+                                    "╚══════════════════════════════════════════════════════════════════╝\n");
                             System.out.printf("➨ \t");
                             byte choice = Byte.parseByte(scanner.nextLine());
                             switch (choice) {

@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
 
 public class ValidationUtils {
     public static final String NAME_REGEX = "^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$";
-    public static final String PASSWORD_REGEX = "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$";
+    public static final String PASSWORD_REGEX ="^([a-zA-Z0-9]{8,})";
     public static final String PHONE_REGEX = "^[0][1-9][0-9]{8,9}$";
     public static final String EMAIL_REGEX = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,3}$";
     public static final String USERNAME_REGEX = "^[A-Za-z][A-Za-z0-9_]{7,19}$";
