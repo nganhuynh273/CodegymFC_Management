@@ -19,16 +19,12 @@ public class ShowScheduleView {
     public static void showSchedule() {
         List<Schedule> scheduleList = scheduleService.getScheduleItem();
         try {
-            System.out.println("\n------------------------------ TRẬN ĐẤU ------------------------------------------\n");
+            System.out.println("════════════════════════════════════════════════════ LỊCH THI ĐẤU ═══════════════════════════════════════════════════════");
             for (Schedule schedule : scheduleList) {
-                String leftAlignFormat = "│ %-7s │ %-13s│ %-13s │ %-9s │%n";
-                String line = "+ꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷ+%n";
-                System.out.format(line);
-                System.out.format("│   Trận đấu   │ Ngày thi đấu │ Giờ thi đấu   │ Sân thi đấu  │%n");
-                System.out.format(line);
-                System.out.format(leftAlignFormat, schedule.getTranThiDau(), DateUtils.dateToString(schedule.getNgayThidau(), DateUtils.DATE_PATTERN), schedule.getGioThiDau(), schedule.getSanThiDau());
-                System.out.format(line);
-                System.out.println("\n");
+                System.out.printf(" %-31s %-20s %-20s %-27s\n", "Trận đấu", "Ngày thi đấu", "Giờ thi đấu", "Sân thi đấu");
+                System.out.printf("%3s %26s %15s %22s\n", schedule.getTranThiDau(),
+                        DateUtils.dateToString(schedule.getNgayThidau(), DateUtils.DATE_PATTERN), schedule.getGioThiDau(), schedule.getSanThiDau());
+                System.out.println("═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════");
             }
             boolean is = true;
             do {
@@ -39,10 +35,7 @@ public class ShowScheduleView {
                         "║                   [2] Nhấn 'e' để thoát chương trình             ║\n" +
                         "║                                                                  ║\n" +
                         "╚══════════════════════════════════════════════════════════════════╝\n");
-//                System.out.println("\n=================================================");
-//                System.out.printf("\n|         Nhấn 'c' để quay trở lại          |");
-//                System.out.printf("\n|         Nhấn 'e' để thoát                 |");
-//                System.out.println("\n=================================================");
+
                 System.out.println(" ➨ \t");
                 String choice = scanner.nextLine();
                 switch (choice) {
@@ -63,32 +56,3 @@ public class ShowScheduleView {
     }
 }
 
-//    public void showProduct() {
-//        boolean flag = true;
-//        do {
-//            System.out.println("\n=================================================");
-//            System.out.println("\n|         Nhấn 'c' để quay trở lại          |");
-//            System.out.println("\n|         Nhấn 'e' để thoát                 |");
-//            System.out.println("\n=================================================");
-//            System.out.println(" ➨ \t");
-//            String choice = scanner.nextLine();
-//            try {
-//                switch (choice) {
-//                    case "c":
-//                        ScheduleView.start();
-//                        break;
-//                    case "e":
-//                        Menu.exit();
-//                        System.exit(0);
-//                        break;
-//                    default:
-//                        System.out.println("Vui lòng nhập lại!");
-//                        flag = false;
-//                }
-//            } catch (Exception e) {
-//                System.out.println("Chưa hợp lệ! Xin vui lòng nhập lại!");
-//            }
-//        } while (!flag);
-//    }
-//
-//}

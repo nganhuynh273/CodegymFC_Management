@@ -123,16 +123,12 @@ public class UpdateScheduleView {
     }
 
     public static void show(List<Schedule> scheduleList) {
-        System.out.println("\n------------------------------ TRẬN ĐẤU ------------------------------------------\n");
+        System.out.println("════════════════════════════════════════════════════ LỊCH THI ĐẤU ═══════════════════════════════════════════════════════");
         for (Schedule schedule : scheduleList) {
-            String leftAlignFormat = "│ %-7s │ %-13s│ %-13s │ %-9s │%n";
-            String line = "+ꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷ+ꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷꟷ+%n";
-            System.out.format(line);
-            System.out.format("│   Trận đấu   │ Ngày thi đấu │ Giờ thi đấu   │ Sân thi đấu  │%n");
-            System.out.format(line);
-            System.out.format(leftAlignFormat, schedule.getTranThiDau(), DateUtils.dateToString(schedule.getNgayThidau(), DateUtils.DATE_PATTERN), schedule.getGioThiDau(), schedule.getSanThiDau());
-            System.out.format(line);
-            System.out.println("\n");
+            System.out.printf(" %-31s %-20s %-20s %-27s\n", "Trận đấu", "Ngày thi đấu", "Giờ thi đấu", "Sân thi đấu");
+            System.out.printf("%3s %26s %15s %22s\n", schedule.getTranThiDau(),
+                    DateUtils.dateToString(schedule.getNgayThidau(), DateUtils.DATE_PATTERN), schedule.getGioThiDau(), schedule.getSanThiDau());
+            System.out.println("═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════");
         }
     }
     public void showSchedule() {

@@ -108,25 +108,22 @@ public class CreateScheduleView {
 
     public static void showScheduleInfo(Schedule schedule) {
         try {
-            System.out.print("╔══════════════════════════════════════════════════════════════════╗\n" +
-                    "║                                                                  ║\n" +
-                    "║                     TRẬN ĐẤU                  ║\n" +
-                    "║                                                                  ║\n" +
-                    "║                   [1] Trận d                 ║\n" +
-                    "║                   [2] Hiển thị danh sách Huấn luyện viên         ║\n" +
-                    "║                   [0] Quay lại                                   ║\n" +
-                    "║                                                                  ║\n" +
-                    "╚══════════════════════════════════════════════════════════════════╝\n");
-            System.out.println("\n══════════════════════════════════ TRẬN ĐẤU ══════════════════════════════════n");
-            System.out.printf("%-30s %-12s\n", "1. Trận đấu:", schedule.getTranThiDau());
-            System.out.printf("%-30s %-12s\n", "2. Ngày thi đấu", DateUtils.dateToString(schedule.getNgayThidau()));
-            System.out.printf("%-30s %-12s\n", "3. Giờ thi đấu:", schedule.getGioThiDau());
-            System.out.printf("%-30s %-12s\n", "4. Sân thi đấu:", schedule.getSanThiDau());
-            System.out.println("\n----------------------------------------------------------------------------------\n");
+            System.out.println("════════════════════════════════════════════════════ LỊCH THI ĐẤU ═══════════════════════════════════════════════════════");
+                System.out.printf(" %-31s %-20s %-20s %-27s\n", "Trận đấu", "Ngày thi đấu", "Giờ thi đấu", "Sân thi đấu");
+                System.out.printf("%3s %26s %15s %22s\n", schedule.getTranThiDau(),
+                        DateUtils.dateToString(schedule.getNgayThidau(), DateUtils.DATE_PATTERN), schedule.getGioThiDau(), schedule.getSanThiDau());
+                System.out.println("═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════");
 
 
             boolean is = true;
             do {
+                System.out.print("╔══════════════════════════════════════════════════════════════════╗\n" +
+                        "║                                                                  ║\n" +
+                        "║                   [1] Nhấn 'q' để trở lại                        ║\n" +
+                        "║                   [2] Nhấn 'c' để quay về menu                   ║\n" +
+                        "║                   [3] Nhấn 't' để thoát chương trình             ║\n" +
+                        "║                                                                  ║\n" +
+                        "╚══════════════════════════════════════════════════════════════════╝\n");
                 System.out.println("Nhấn 'q' để trở lại \n" +
                         "Nhấn 'c' để quay về menu \n" +
                         "Nhấn 't' để thoát chương trình");

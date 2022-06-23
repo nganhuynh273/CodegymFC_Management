@@ -13,6 +13,7 @@ import static hpn.view.MainLauncher.userMenu;
 import static hpn.view.ManagerFootball.SearchView.searchByTenCoach;
 import static hpn.view.ManagerFootball.ShowView.showCoachs;
 import static hpn.view.ManagerFootball.ShowView.showFootballers;
+import static hpn.view.ManagerSchedule.ShowScheduleView.showSchedule;
 import static hpn.view.MemberView.launch;
 import static hpn.view.Menu.mainMenu;
 import static sun.security.jgss.GSSUtil.login;
@@ -25,7 +26,7 @@ public class Main {
 //  showSchedule();
 //        nhapDuLieuTuDong();
 //        MainLauncher.launch();
-//        mainMenu();
-        searchByTenCoach();
+////        mainMenu();
+        showSchedule();
     }
 }
