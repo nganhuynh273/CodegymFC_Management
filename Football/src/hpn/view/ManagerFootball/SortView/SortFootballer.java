@@ -19,18 +19,18 @@ public class SortFootballer {
     }
 
     public static void sortFootballer() {
-        System.out.println("❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂");
-        System.out.println("❂                      HIỂN THỊ SẮP XẾP CẦU THỦ                    ❂");
-        System.out.println("❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂");
-        System.out.println("❂                                                                  ❂");
-        System.out.println("❂           1. Hiển thị sắp xếp theo vị trí thi đấu                ❂");
-        System.out.println("❂           2. Hiển thị sắp xếp theo lượt tham gia thi đấu         ❂");
-        System.out.println("❂           3. Hiển thị sắp xếp theo lượt ghi bàn thắng            ❂");
-        System.out.println("❂           4. Hiển thị sắp xếp theo lương thỏa thuận              ❂");
-        System.out.println("❂           5. Quay lại                                            ❂");
-        System.out.println("❂           0. Quay về menu                                        ❂");
-        System.out.println("❂                                                                  ❂");
-        System.out.println("❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂");
+        System.out.print("╔══════════════════════════════════════════════════════════════════╗\n" +
+                "║                                                                  ║\n" +
+                "║                     HIỂN THỊ SẮP XẾP CẦU THỦ                     ║\n" +
+                "║                                                                  ║\n" +
+                "║            [1] Hiển thị sắp xếp theo vị trí thi đấu              ║\n" +
+                "║            [2] Hiển thị sắp xếp theo lượt tham gia thi đấu       ║\n" +
+                "║            [3] Hiển thị sắp xếp theo lượt ghi bàn thắng          ║\n" +
+                "║            [4] Hiển thị sắp xếp theo lương thỏa thuận            ║\n" +
+                "║            [2] Quay lại                                          ║\n" +
+                "║            [0] Quay về menu                                      ║\n" +
+                "║                                                                  ║\n" +
+                "╚══════════════════════════════════════════════════════════════════╝\n");
         System.out.print("➨ \t");
     }
 
@@ -70,17 +70,16 @@ public class SortFootballer {
         boolean flag = true;
         int choice;
         do {
-            System.out.println("✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿");
-            System.out.println("✿            SẮP XẾP THEO MỨC LƯƠNG THỎA THUẬN          ✿");
-            System.out.println("✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿");
-            System.out.println("✿                                                       ✿");
-            System.out.println("✿            1. Theo thứ tự từ tăng dần                 ✿");
-            System.out.println("✿            2. Theo thứ tự từ giảm dần                 ✿");
-            System.out.println("✿            0. Quay lại                                ✿");
-            System.out.println("✿                                                       ✿");
-            System.out.println("✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿");
-            System.out.println();
-            System.out.print("Chọn chức năng :");
+            System.out.print("╔══════════════════════════════════════════════════════════════════╗\n" +
+                    "║                                                                  ║\n" +
+                    "║                    SẮP XẾP THEO LƯƠNG THỎA THUẬN                 ║\n" +
+                    "║                                                                  ║\n" +
+                    "║            [1] Theo thứ tự từ tăng dần                           ║\n" +
+                    "║            [2] Theo thứ tự từ giảm dần                           ║\n" +
+                    "║            [0] Quay lại                                          ║\n" +
+                    "║                                                                  ║\n" +
+                    "╚══════════════════════════════════════════════════════════════════╝\n");
+            System.out.print("➨ \t");
             try {
                 choice = Integer.parseInt(scanner.nextLine());
                 switch (choice) {
@@ -117,17 +116,16 @@ public class SortFootballer {
         boolean flag = true;
         int choice;
         do {
-            System.out.println("✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿");
-            System.out.println("✿             SẮP XẾP THEO LƯỢT GHI BÀN THẮNG           ✿");
-            System.out.println("✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿");
-            System.out.println("✿                                                       ✿");
-            System.out.println("✿            1. Theo thứ tự từ tăng dần                 ✿");
-            System.out.println("✿            2. Theo thứ tự từ giảm dần                 ✿");
-            System.out.println("✿            0. Quay lại                                ✿");
-            System.out.println("✿                                                       ✿");
-            System.out.println("✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿");
-            System.out.println();
-            System.out.print("Chọn chức năng :");
+            System.out.print("╔══════════════════════════════════════════════════════════════════╗\n" +
+                    "║                                                                  ║\n" +
+                    "║                  SẮP XẾP THEO LƯỢT GHI BÀN THẮNG                 ║\n" +
+                    "║                                                                  ║\n" +
+                    "║            [1] Theo thứ tự từ tăng dần                           ║\n" +
+                    "║            [2] Theo thứ tự từ giảm dần                           ║\n" +
+                    "║            [0] Quay lại                                          ║\n" +
+                    "║                                                                  ║\n" +
+                    "╚══════════════════════════════════════════════════════════════════╝\n");
+            System.out.print("➨ \t");
             try {
                 choice = Integer.parseInt(scanner.nextLine());
                 switch (choice) {
@@ -164,17 +162,16 @@ public class SortFootballer {
         boolean flag = true;
         int choice;
         do {
-            System.out.println("✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿");
-            System.out.println("✿           SẮP XẾP THEO SỐ LƯỢT THAM GIA THI ĐẤU       ✿");
-            System.out.println("✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿");
-            System.out.println("✿                                                       ✿");
-            System.out.println("✿            1. Theo thứ tự từ tăng dần                 ✿");
-            System.out.println("✿            2. Theo thứ tự từ giảm dần                 ✿");
-            System.out.println("✿            0. Quay lại                                ✿");
-            System.out.println("✿                                                       ✿");
-            System.out.println("✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿");
-            System.out.println();
-            System.out.print("Chọn chức năng :");
+            System.out.print("╔══════════════════════════════════════════════════════════════════╗\n" +
+                    "║                                                                  ║\n" +
+                    "║                  SẮP XẾP THEO LƯỢT THAM GIA THI ĐẤU              ║\n" +
+                    "║                                                                  ║\n" +
+                    "║            [1] Theo thứ tự từ tăng dần                           ║\n" +
+                    "║            [2] Theo thứ tự từ giảm dần                           ║\n" +
+                    "║            [0] Quay lại                                          ║\n" +
+                    "║                                                                  ║\n" +
+                    "╚══════════════════════════════════════════════════════════════════╝\n");
+            System.out.print("➨ \t");
             try {
                 choice = Integer.parseInt(scanner.nextLine());
                 switch (choice) {
@@ -211,17 +208,16 @@ public class SortFootballer {
         boolean flag = true;
         int choice;
         do {
-            System.out.println("✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿");
-            System.out.println("✿             SẮP XẾP THEO VỊ TRÍ THI ĐẤU               ✿");
-            System.out.println("✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿");
-            System.out.println("✿                                                       ✿");
-            System.out.println("✿             1. Theo thứ tự từ tăng dần                ✿");
-            System.out.println("✿             2. Theo thứ tự từ giảm dần                ✿");
-            System.out.println("✿             0. Quay lại                               ✿");
-            System.out.println("✿                                                       ✿");
-            System.out.println("✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿");
-            System.out.println();
-            System.out.print("Chọn chức năng:");
+            System.out.print("╔══════════════════════════════════════════════════════════════════╗\n" +
+                    "║                                                                  ║\n" +
+                    "║                    SẮP XẾP THEO VỊ TRÍ THI ĐẤU                   ║\n" +
+                    "║                                                                  ║\n" +
+                    "║            [1] Theo thứ tự từ tăng dần                           ║\n" +
+                    "║            [2] Theo thứ tự từ giảm dần                           ║\n" +
+                    "║            [0] Quay lại                                          ║\n" +
+                    "║                                                                  ║\n" +
+                    "╚══════════════════════════════════════════════════════════════════╝\n");
+            System.out.print("➨ \t");
             try {
                 choice = Integer.parseInt(scanner.nextLine());
                 switch (choice) {

@@ -22,17 +22,17 @@ public class SortCoach {
     }
 
     public static void sortCoach() {
-        System.out.println("❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂");
-        System.out.println("❂                  HIỂN THỊ SẮP XẾP HUẤN LUYỆN VIÊN                ❂");
-        System.out.println("❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂");
-        System.out.println("❂                                                                  ❂");
-        System.out.println("❂           1. Hiển thị sắp xếp theo số năm kinh nghiệm            ❂");
-        System.out.println("❂           2. Hiển thị sắp xếp theo hệ số lương                   ❂");
-        System.out.println("❂           3. Hiển thị sắp xếp theo lương phụ cấp                 ❂");
-        System.out.println("❂           4. Quay lại                                            ❂");
-        System.out.println("❂           0. Quay về menu                                        ❂");
-        System.out.println("❂                                                                  ❂");
-        System.out.println("❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂");
+        System.out.print("╔══════════════════════════════════════════════════════════════════╗\n" +
+                "║                                                                  ║\n" +
+                "║                  HIỂN THỊ SẮP XẾP HUẤN LUYỆN VIÊN                ║\n" +
+                "║                                                                  ║\n" +
+                "║            [1] Hiển thị sắp xếp theo số năm kinh nghiệm          ║\n" +
+                "║            [2] Hiển thị sắp xếp theo hệ số lương                 ║\n" +
+                "║            [3] Hiển thị sắp xếp theo lương phụ cấp               ║\n" +
+                "║            [4] Quay lại                                          ║\n" +
+                "║            [0] Quay về menu                                      ║\n" +
+                "║                                                                  ║\n" +
+                "╚══════════════════════════════════════════════════════════════════╝\n");
         System.out.print("➨ \t");
     }
 
@@ -69,17 +69,16 @@ public class SortCoach {
         boolean flag = true;
         int choice;
         do {
-            System.out.println("✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿");
-            System.out.println("✿                SẮP XẾP THEO LƯƠNG PHỤ CẤP             ✿");
-            System.out.println("✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿");
-            System.out.println("✿                                                       ✿");
-            System.out.println("✿            1. Theo thứ tự từ tăng dần                 ✿");
-            System.out.println("✿            2. Theo thứ tự từ giảm dần                 ✿");
-            System.out.println("✿            0. Quay lại                                ✿");
-            System.out.println("✿                                                       ✿");
-            System.out.println("✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿");
-            System.out.println();
-            System.out.print("Chọn chức năng :");
+            System.out.print("╔══════════════════════════════════════════════════════════════════╗\n" +
+                    "║                                                                  ║\n" +
+                    "║                    SẮP XẾP THEO LƯƠNG PHỤ CẤP                    ║\n" +
+                    "║                                                                  ║\n" +
+                    "║            [1] Theo thứ tự từ tăng dần                           ║\n" +
+                    "║            [2] Theo thứ tự từ giảm dần                           ║\n" +
+                    "║            [0] Quay lại                                          ║\n" +
+                    "║                                                                  ║\n" +
+                    "╚══════════════════════════════════════════════════════════════════╝\n");
+            System.out.print("➨ \t");
             try {
                 choice = Integer.parseInt(scanner.nextLine());
                 switch (choice) {
@@ -117,17 +116,16 @@ public class SortCoach {
         boolean flag = true;
         int choice;
         do {
-            System.out.println("✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿");
-            System.out.println("✿                 SẮP XẾP THEO HỆ SỐ LƯƠNG              ✿");
-            System.out.println("✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿");
-            System.out.println("✿                                                       ✿");
-            System.out.println("✿            1. Theo thứ tự từ tăng dần                 ✿");
-            System.out.println("✿            2. Theo thứ tự từ giảm dần                 ✿");
-            System.out.println("✿            0. Quay lại                                ✿");
-            System.out.println("✿                                                       ✿");
-            System.out.println("✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿");
-            System.out.println();
-            System.out.print("Chọn chức năng :");
+            System.out.print("╔══════════════════════════════════════════════════════════════════╗\n" +
+                    "║                                                                  ║\n" +
+                    "║                    SẮP XẾP THEO HỆ SỐ LƯƠNG                      ║\n" +
+                    "║                                                                  ║\n" +
+                    "║            [1] Theo thứ tự từ tăng dần                           ║\n" +
+                    "║            [2] Theo thứ tự từ giảm dần                           ║\n" +
+                    "║            [0] Quay lại                                          ║\n" +
+                    "║                                                                  ║\n" +
+                    "╚══════════════════════════════════════════════════════════════════╝\n");
+            System.out.print("➨ \t");
             try {
                 choice = Integer.parseInt(scanner.nextLine());
                 switch (choice) {
@@ -165,17 +163,16 @@ public class SortCoach {
         boolean flag = true;
         int choice;
         do {
-            System.out.println("✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿");
-            System.out.println("✿              SẮP XẾP THEO SỐ NĂM KINH NGHIỆM          ✿");
-            System.out.println("✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿");
-            System.out.println("✿                                                       ✿");
-            System.out.println("✿            1. Theo thứ tự từ tăng dần                 ✿");
-            System.out.println("✿            2. Theo thứ tự từ giảm dần                 ✿");
-            System.out.println("✿            0. Quay lại                                ✿");
-            System.out.println("✿                                                       ✿");
-            System.out.println("✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿");
-            System.out.println();
-            System.out.print("Chọn chức năng :");
+            System.out.print("╔══════════════════════════════════════════════════════════════════╗\n" +
+                    "║                                                                  ║\n" +
+                    "║                    SẮP XẾP THEO SỐ NĂM KINH NGHIỆM               ║\n" +
+                    "║                                                                  ║\n" +
+                    "║            [1] Theo thứ tự từ tăng dần                           ║\n" +
+                    "║            [2] Theo thứ tự từ giảm dần                           ║\n" +
+                    "║            [0] Quay lại                                          ║\n" +
+                    "║                                                                  ║\n" +
+                    "╚══════════════════════════════════════════════════════════════════╝\n");
+            System.out.print("➨ \t");
             try {
                 choice = Integer.parseInt(scanner.nextLine());
                 switch (choice) {

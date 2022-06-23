@@ -36,9 +36,10 @@ public class Menu {
                 "║               [1] Hiển thị danh sách đội bóng                    ║\n" +
                 "║               [2] Thêm danh sách đội bóng                        ║\n" +
                 "║               [3] Cập nhật danh sách đội bóng                    ║\n" +
-                "║               [4] Xóa danh sách                                  ║\n" +
+                "║               [4] Sa thải nhân viên đội bóng                     ║\n" +
                 "║               [5] Tìm kiếm nhân viên đội bóng                    ║\n" +
                 "║               [6] Hiển thị sắp xếp nhân viên đội bóng            ║\n" +
+                "║               [*] Nạp dữ liệu tự động                            ║\n" +
                 "║               [7] Quay về menu chính                             ║\n" +
                 "║               [0] Thoát chương trình                             ║\n" +
                 "║                                                                  ║\n" +

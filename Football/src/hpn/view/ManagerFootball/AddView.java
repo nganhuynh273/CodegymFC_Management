@@ -69,9 +69,9 @@ public class AddView {
             System.out.println("Nhập mã nhân viên (Ví dụ: HLV02 hoặc CT273): ");
             System.out.print("➨ ");
             String maNhanvien = scanner.nextLine().trim();
-            while (!ValidationUtils.isIDStaffValid(maNhanvien)) {
+            while (!ValidationUtils.isCT(maNhanvien)) {
                 System.out.println("Mã nhân viên " + maNhanvien + " chưa hợp lệ. Vui lòng nhập lại!\n" +
-                        "Mã nhân viên phải bắt đầu bằng chữ in hoa HLV hoặc CT. (Ví dụ: HLV02 hoặc CT273)");
+                        "Mã nhân viên phải bắt đầu bằng chữ in hoa CT. (Ví dụ: CTV02 hoặc CT273)");
                 maNhanvien = scanner.nextLine();
             }
             while (footballerServiceImpl.existsbyIDStaff(maNhanvien)) {
@@ -282,9 +282,9 @@ public class AddView {
             System.out.println("Nhập mã nhân viên (Ví dụ: HLV02 hoặc CT273): ");
             System.out.print("➨ ");
             String maNhanvien = scanner.nextLine().trim();
-            while (!ValidationUtils.isIDStaffValid(maNhanvien)) {
+            while (!ValidationUtils.isHLV(maNhanvien)) {
                 System.out.println("Mã nhân viên " + maNhanvien + " chưa hợp lệ. Vui lòng nhập lại!\n" +
-                        "Mã nhân viên phải bắt đầu bằng chữ in hoa HLV hoặc CT. (Ví dụ: HLV02 hoặc CT273)");
+                        "Mã nhân viên phải bắt đầu bằng chữ in hoa HLV. (Ví dụ: HLV02 hoặc HLV273)");
                 maNhanvien = scanner.nextLine();
             }
             while (coachServiceImpl.existsbyIDStaff(maNhanvien)) {

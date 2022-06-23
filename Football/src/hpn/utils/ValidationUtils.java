@@ -16,13 +16,22 @@ public class ValidationUtils {
     public static final String EMAIL_REGEX = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,3}$";
     public static final String USERNAME_REGEX = "^[A-Za-z][A-Za-z0-9_]{7,19}$";
     public static final String ADDRESS_REGEX = "^[A-Za-z][A-Za-z0-9_]{7,19}$";
-    public static final String MANHANVIEN_REGEX = "^([HLV]*\\d{0,3})|([CT]*\\d{0,3})$";
+    public static final String MANHANVIENCT_REGEX = "^([CT]*\\d{0,3})$";
+    public static final String MANHANVIENHLV_REGEX = "^([HLV]*\\d{0,3})$";
 
     public static final String GIOITINH_REGEX = "^(Nam)|(Nữ)$";
 
     public static final String TIME_REGEX = "^([0-2][0-3]:[0-5][0-9])$";
 
 
+
+    public static boolean isCT(String maNhanVien) {
+        return Pattern.matches(MANHANVIENCT_REGEX, maNhanVien);
+    }
+
+    public static boolean isHLV(String maNhanVien) {
+        return Pattern.matches(MANHANVIENHLV_REGEX, maNhanVien);
+    }
     public static boolean isTime(String gioThiDau) {
         return Pattern.matches(TIME_REGEX, gioThiDau);
     }
@@ -31,10 +40,10 @@ public class ValidationUtils {
         return Pattern.matches(GIOITINH_REGEX, gioiTinh);
     }
 
-    public static boolean isIDStaffValid(String maNhanvien) {
-
-        return Pattern.matches(MANHANVIEN_REGEX, maNhanvien);
-    }
+//    public static boolean isIDStaffValid(String maNhanvien) {
+//
+//        return Pattern.matches(MANHANVIEN_REGEX, maNhanvien);
+//    }
 
     public static boolean isPasswordValid(String password) {
 

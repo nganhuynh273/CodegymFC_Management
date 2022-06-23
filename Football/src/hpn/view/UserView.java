@@ -53,17 +53,17 @@ public class UserView {
 
     public void setRole(User user) {
         int option;
-        System.out.print("╔══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗\n" +
-                "║                                                                                                                                                                              ║\n" +
-                "║                                                                                  \033[1;94mSET ROLE\033[0m                                                                                    ║\n" +
-                "║                                                                                                                                                                              ║\n" +
-                "║                                                                                                                                                                              ║\n" +
-                "║                                                                             [1] \033[0;95mUSER\033[0m                                                                                          ║\n" +
-                "║                                                                            [2] \033[0;95mADMIN\033[0m                                                                                         ║\n" +
-                "║                                                                            [3] \033[0;95mQuay lại\033[0m                                                                                      ║\n" +
-                "║                                                                            [0] \033[0;95mThoát\033[0m                                                                                         ║\n" +
-                "║                                                                                                                                                                              ║\n" +
-                "╚══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝\n");
+        System.out.print("╔═══════════════════════════════════════════════════════════════════════════════════╗\n" +
+                "║                                                                                   ║\n" +
+                "║                                   SET ROLE                                        ║\n" +
+                "║                                                                                   ║\n" +
+                "║                   [1] USER                                                        ║\n" +
+                "║                   [2] ADMIN                                                       ║\n" +
+                "║                   [3] Quay lại                                                    ║\n" +
+                "║                   [0] Thoát                                                       ║\n" +
+                "║                                                                                   ║\n" +
+                "╚═══════════════════════════════════════════════════════════════════════════════════╝\n");
+
         do {
             System.out.println("Chọn Role: ");
             option = AppUtils.retryChoose(0,3);
@@ -114,19 +114,20 @@ public class UserView {
             try {
                 showUsers(InputOption.UPDATE);
                 long id = inputId(InputOption.UPDATE);
-                System.out.print( "╔══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗\n" +
-                        "║                                                                                                                                                                              ║\n" +
-                        "║                                                                                        \033[1;94mUPDATE\033[0m                                                                                ║\n" +
-                        "║                                                                                                                                                                              ║\n" +
-                        "║                                                                                                                                                                              ║\n" +
-                        "║                                                                            [1] \033[0;95mCập nhật lại tên người dùng\033[0m                                                                   ║\n" +
-                        "║                                                                            [2] \033[0;95mCập nhật lại số điện thoại\033[0m                                                                    ║\n" +
-                        "║                                                                            [3] \033[0;95mCập nhật lại email\033[0m                                                                            ║\n" +
-                        "║                                                                            [4] \033[0;95mCập nhật lại địa chỉ\033[0m                                                                          ║\n" +
-                        "║                                                                            [5] \033[0;95mCập nhật lại Role\033[0m                                                                             ║\n" +
-                        "║                                                                            [6] \033[0;95mQuay lại\033[0m                                                                                      ║\n" +
-                        "║                                                                            [0] \033[0;95mThoát\033[0m                                                                                         ║\n" +
-                        "╚══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝\n");
+                System.out.print("╔═══════════════════════════════════════════════════════════════════════════════════╗\n" +
+                        "║                                                                                   ║\n" +
+                        "║                           CẬP NHẬT THÔNG TIN NGƯỜI DÙNG                           ║\n" +
+                        "║                                                                                   ║\n" +
+                        "║                   [1] Cập nhật lại tên người dùng                                 ║\n" +
+                        "║                   [2] Cập nhật lại số điện thoại                                  ║\n" +
+                        "║                   [3] Cập nhật lại email                                          ║\n" +
+                        "║                   [4] Cập nhật lại địa chỉ                                        ║\n" +
+                        "║                   [5] Cập nhật lại Role                                           ║\n" +
+                        "║                   [6] Quay lại                                                    ║\n" +
+                        "║                   [0] Thoát                                                       ║\n" +
+                        "║                                                                                   ║\n" +
+                        "╚═══════════════════════════════════════════════════════════════════════════════════╝\n");
+
 
                 int option = AppUtils.retryChoose(0, 6);
                 User newUser = new User();
@@ -169,7 +170,7 @@ public class UserView {
                 isRetry = option != 6 && AppUtils.isRetry(InputOption.UPDATE);
 
             } catch (Exception e) {
-                System.out.println("Nhập sai! vui lòng nhập lại");
+                System.out.println("Nhập sai! Vui lòng nhập lại");
             }
         } while (isRetry);
     }
@@ -196,17 +197,15 @@ public class UserView {
                     break;
             }
         }
-
-        System.out.print("╔══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗\n" +
-                "║                                                                                                                                                                              ║\n" +
-                "║                                                                                  \033[1;94mREMOVE MENU\033[0m                                                                                   ║\n" +
-                "║                                                                                                                                                                              ║\n" +
-                "║                                                                                                                                                                              ║\n" +
-                "║                                                                            [1] \033[0;95mXác nhận xóa người dùng này\033[0m                                                                     ║\n" +
-                "║                                                                            [2] \033[0;95mQuay lại\033[0m                                                                                      ║\n" +
-                "║                                                                            [0] \033[0;95mThoát\033[0m                                                                                         ║\n" +
-                "║                                                                                                                                                                              ║\n" +
-                "╚══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝\n");
+        System.out.print("╔═══════════════════════════════════════════════════════════════════════════════════╗\n" +
+                "║                                                                                   ║\n" +
+                "║                         XÓA DANH SÁCH NGƯỜI DÙNG                                  ║\n" +
+                "║                                                                                   ║\n" +
+                "║                   [1] Xác nhận xóa người dùng này                                 ║\n" +
+                "║                   [2] Quay lại                                                    ║\n" +
+                "║                   [0] Thoát                                                       ║\n" +
+                "║                                                                                   ║\n" +
+                "╚═══════════════════════════════════════════════════════════════════════════════════╝\n");
 
         int option = AppUtils.retryChoose(0, 2);
         if (option == 1) {
@@ -223,10 +222,10 @@ public class UserView {
         long id;
         switch (option) {
             case UPDATE:
-                System.out.println("Nhập id bạn muốn sửa: ");
+                System.out.println("Nhập ID bạn muốn sửa: ");
                 break;
             case DELETE:
-                System.out.println("Nhập id bạn muốn xoá: ");
+                System.out.println("Nhập ID bạn muốn xoá: ");
                 break;
         }
         boolean isRetry = false;
@@ -236,13 +235,13 @@ public class UserView {
             switch (option) {
                 case UPDATE:
                     if (!exist) {
-                        System.out.println("Không tìm thấy id! Vui lòng nhập lại");
+                        System.out.println("Không tìm thấy ID! Vui lòng nhập lại");
                     }
                     isRetry = !exist;
                     break;
                 case DELETE:
                     if (!exist) {
-                        System.out.println("Không tìm thấy id! Vui lòng nhập lại");
+                        System.out.println("Không tìm thấy ID! Vui lòng nhập lại");
                     }
                     isRetry = !exist;
                     break;
@@ -327,10 +326,10 @@ public class UserView {
     private String inputEmail(InputOption option) {
         switch (option) {
             case ADD:
-                System.out.println("Nhập email bạn muốn thêm: vd: name@gmail.com ");
+                System.out.println("Nhập email bạn muốn thêm: vd: ngan@gmail.com ");
                 break;
             case UPDATE:
-                System.out.println("Nhập email bạn muốn đổi: vd: name@gmail.com");
+                System.out.println("Nhập email bạn muốn đổi: vd: nganhuynh@gmail.com");
                 break;
         }
         System.out.print(" ⭆ ");
@@ -338,13 +337,13 @@ public class UserView {
         do {
             if (!ValidationUtils.isEmailValid(email = scanner.nextLine())) {
                 System.out.println("Email " + email + " của bạn không đúng định dạng! Vui lòng kiểm tra và nhập lại ");
-                System.out.println("Nhập email (vd: name@gmail.com)");
+                System.out.println("Nhập email (vd: ngan@gmail.com)");
                 System.out.print(" ⭆ ");
                 continue;
             }
             if (userService.existsByEmail(email)) {
                 System.out.println("Email " + email + " của bạn đã tồn tại! vui lòng kiểm tra lại");
-                System.out.println("Nhập email (vd: name@gmail.com)");
+                System.out.println("Nhập email (vd: nganhuynh@gmail.com)");
                 System.out.print(" ⭆ ");
                 continue;
             }

@@ -10,15 +10,16 @@ public class SortView {
         boolean isChoice = true;
         int choice = -1;
         do {
-            String leftAlignFormat = "| %-2s | %-50s | %n";
-            String line = "+----+----------------------------------------------------+%n";
-            System.out.format(line);
-            System.out.format("| #  | HIỂN THỊ SẮP XẾP NHÂN VIÊN                          |%n");
-            System.out.format(line);
-            System.out.format(leftAlignFormat, 1, "Hiển thị sắp xếp thông tin Cầu thủ");
-            System.out.format(leftAlignFormat, 2, "Hiển thị sắp xếp thông tin Huấn luyện viên");
-            System.out.format(leftAlignFormat, 0, "Quay lại");
-            System.out.format(line);
+            System.out.print("╔══════════════════════════════════════════════════════════════════╗\n" +
+                    "║                                                                  ║\n" +
+                    "║                  HIỂN THỊ SẮP XẾP NHÂN VIÊN                      ║\n" +
+                    "║                                                                  ║\n" +
+                    "║            [1] Hiển thị sắp xếp thông tin Cầu thủ                ║\n" +
+                    "║            [2] Hiển thị sắp xếp thông tin Huấn luyện viên        ║\n" +
+                    "║            0] Quay lại                                           ║\n" +
+                    "║                                                                  ║\n" +
+                    "╚══════════════════════════════════════════════════════════════════╝\n");
+
             System.out.print("Chọn\t➨ ");
             try {
                 choice = Integer.parseInt(scanner.nextLine());
